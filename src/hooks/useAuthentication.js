@@ -7,13 +7,12 @@ const useAuthentication = () => {
     // Agregamos el "return" antes de axios
     return await axios.post(`${Api}/users/login`, data)
          .then(res => {
-            sessionStorage.setItem("token", res.data.Token); // Ojo: usualmente es res.data.token, no .user
+            sessionStorage.setItem("token", res.data.Token); 
             sessionStorage.setItem("user", JSON.stringify(res.data.user));
             console.log(res.data)
-            return res.data; // <--- IMPORTANTE: Retorna los datos aquí
+            return res.data; 
          })
          .catch(err => {
-            // Corregido: antes tenías "error", debe ser "err"
             console.error("Error en login:", err.response?.data || err.message);
             throw err;
          });
