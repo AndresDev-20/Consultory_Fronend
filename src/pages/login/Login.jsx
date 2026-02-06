@@ -1,14 +1,18 @@
 import { useForm } from "react-hook-form";
 import "./login.css"
 import useAuthentication from "../../hooks/useAuthentication";
+import { useNavigate } from "react-router-dom";
 
 function Login(){
     const { register, handleSubmit, reset } = useForm();
     const { logginUser } = useAuthentication();
+    const navigate = useNavigate();
     const submit = async (data) => {
         try {
             const response = await logginUser(data);
             alert(`Bienvenido ${response.user.role}`);
+            navigate("/");
+            reset();
         } catch (error) {
             alert("Credenciales incorrectas");
         }

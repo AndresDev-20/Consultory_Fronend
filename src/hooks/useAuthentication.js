@@ -7,8 +7,8 @@ const useAuthentication = () => {
     // Agregamos el "return" antes de axios
     return await axios.post(`${Api}/users/login`, data)
          .then(res => {
-            localStorage.setItem("token", res.data.Token); // Ojo: usualmente es res.data.token, no .user
-            localStorage.setItem("user", JSON.stringify(res.data.user));
+            sessionStorage.setItem("token", res.data.Token); // Ojo: usualmente es res.data.token, no .user
+            sessionStorage.setItem("user", JSON.stringify(res.data.user));
             console.log(res.data)
             return res.data; // <--- IMPORTANTE: Retorna los datos aquí
          })
