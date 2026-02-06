@@ -19,7 +19,7 @@ const useAuthentication = () => {
          });
 }
 
-    return {logginUser}
+    return { logginUser }
 }
 
 export default useAuthentication;
