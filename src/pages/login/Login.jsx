@@ -1,10 +1,12 @@
 import { useForm } from "react-hook-form";
 import "./login.css"
+import useAuthentication from "../../hooks/useAuthentication";
 
 function Login(){
     const { register, handleSubmit, reset } = useForm();
+    const { dates } = useAuthentication(data)
     const submit = (data) => {
-        console.log(data)
+        console.log(dates)
     }
 
     return (
@@ -19,7 +21,7 @@ function Login(){
                     </div>
                     <div className="Login__form-fields">
                         <label htmlFor="PASSWORD">Contraseña:</label>
-                        <input {...register("password")} type="number" id="PASSWORD" required placeholder="Ingresa tu clave"/>
+                        <input {...register("password")} type="password" id="PASSWORD" required placeholder="Ingresa tu clave"/>
                     </div>
                     <button>Ingresar</button>
                 </form>
