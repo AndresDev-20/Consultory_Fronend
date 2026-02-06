@@ -1,0 +1,30 @@
+:root {
+  /* --- VERDES (Identidad y Salud) --- */
+  --primary-green: #0D896C;      /* Verde clínico principal (botones, marca) */
+  --primary-green-hover: #0a6e57; /* Para estados hover */
+  --light-green: #E0F7FA;        /* Fondos suaves o alertas positivas */
+  --dark-green: #074D3D;         /* Textos destacados en verde o headers */
+
+  /* --- NEGROS Y GRISES (Textos y Jerarquía) --- */
+  --text-main: #1A1A1A;          /* Negro suave (menos cansado para la vista) */
+  --text-muted: #555555;         /* Para subtítulos o descripciones */
+  --border-color: #E0E0E0;       /* Líneas de tablas y separadores */
+
+  /* --- BLANCOS Y FONDOS --- */
+  --bg-main: #FFFFFF;            /* Fondo general de la app */
+  --bg-sidebar: #F9FBFE;         /* Un blanco "azulado" muy suave para menús */
+  
+  /* --- ALERTAS (Indispensables en software médico) --- */
+  --error: #E52334;              /* Para errores o cancelaciones */
+  --warning: #F26531;            /* Para recordatorios pendientes */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-main);
+}
