@@ -4,9 +4,14 @@ import useAuthentication from "../../hooks/useAuthentication";
 
 function Login(){
     const { register, handleSubmit, reset } = useForm();
-    const { dates } = useAuthentication(data)
-    const submit = (data) => {
-        console.log(dates)
+    const { logginUser } = useAuthentication();
+    const submit = async (data) => {
+        try {
+            const response = await logginUser(data);
+            alert(`Bienvenido ${response.user.role}`);
+        } catch (error) {
+            alert("Credenciales incorrectas");
+        }
     }
 
     return (
@@ -17,7 +22,7 @@ function Login(){
                 <form onSubmit={handleSubmit(submit)} className="Login__container-form">
                     <div className="Login__form-fields">
                         <label htmlFor="ID">No.identificación:</label>
-                        <input {...register("cc")} type="number" id="ID" required placeholder="Igresa tu identificación"/>
+                        <input {...register("cc")} type="text" id="ID" required placeholder="Igresa tu identificación"/>
                     </div>
                     <div className="Login__form-fields">
                         <label htmlFor="PASSWORD">Contraseña:</label>
