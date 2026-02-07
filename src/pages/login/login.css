@@ -1,0 +1,246 @@
+/* CONTENEDOR PRINCIPAL */
+.Login {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../assets/img/fondo_login.png); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* OVERLAY OSCURO */
+.Login::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(1.5px);
+}
+
+/* CONTENIDO ENCIMA DEL OVERLAY */
+.Login__title,
+.Login__container {
+  position: relative;
+  z-index: 2;
+}
+
+/* TITULO PRINCIPAL */
+.Login__title {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 700;
+  margin-top: -3em;
+}
+
+/* CARD DEL LOGIN */
+.Login__container {
+  background: var(--bg-main);
+  backdrop-filter: blur(6px);
+  padding: 40px 30px;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.5s ease;
+}
+
+/* ANIMACION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TITULO DEL FORM */
+.Login__container-title {
+  text-align: center;
+  margin-bottom: 0.6em;
+  color: var(--dark-green);
+}
+
+/* FORM */
+.Login__container-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* CAMPOS */
+.Login__form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.Login__form-fields label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* INPUTS */
+.Login__form-fields input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  outline: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+/* EFECTO FOCUS */
+.Login__form-fields input:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 2px rgba(13, 137, 108, 0.15);
+}
+
+/* BOTON */
+.Login__container-form button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--primary-green);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* HOVER BOTON */
+.Login__container-form button:hover {
+  background-color: var(--primary-green-hover);
+  transform: translateY(-1px);
+}
+
+/* CLICK BOTON */
+.Login__container-form button:active {
+  transform: scale(0.98);
+}
+
+/* RECUPERAR CONTRASEÑA */
+.Login__recover {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.Login__recover h2 {
+  font-size: 0.9rem;
+  color: var(--primary-green);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.Login__recover h2:hover {
+  color: var(--dark-green);
+  text-decoration: underline;
+}
+
+/* ============================= */
+/* 📱 RESPONSIVE MOVIL */
+/* ============================= */
+
+@media screen and (max-width: 768px) {
+  .Login {
+    padding: 20px;
+    justify-content: center;
+  }
+
+  .Login__title {
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .Login__container {
+    padding: 25px 18px;
+    max-width: 100%;
+    border-radius: 14px;
+  }
+
+  .Login__container-title {
+    font-size: 1.2rem;
+  }
+
+  .Login__container-form {
+    gap: 14px;
+  }
+
+  .Login__form-fields input {
+    padding: 11px;
+    font-size: 0.9rem;
+  }
+
+  .Login__container-form button {
+    padding: 11px;
+    font-size: 0.95rem;
+  }
+
+  .Login__recover h2 {
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================= */
+/* 📱 MOVILES PEQUEÑOS */
+/* ============================= */
+
+@media screen and (max-width: 480px) {
+  .Login {
+    padding: 15px;
+  }
+
+  .Login__title {
+    margin-bottom: 10px;
+    margin-top: -5em;
+  }
+
+  .Login__container {
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
+  .Login__form-fields label {
+    font-size: 0.8rem;
+  }
+
+  .Login__form-fields input {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .Login__container-form button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .Login__recover {
+    margin-top: 12px;
+  }
+}
+
+/* ============================= */
+/* 📱 ALTURA BAJA (celulares chicos) */
+/* ============================= */
+
+@media screen and (max-height: 600px) {
+  .Login {
+    justify-content: flex-start;
+    padding-top: 20px;
+  }
+
+  .Login__title {
+    margin-top: 0;
+  }
+}

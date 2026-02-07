@@ -1,0 +1,157 @@
+/* ======================= */
+/* HOME ROOT */
+/* ======================= */
+
+.Home {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-sidebar);
+}
+
+
+/* ======================= */
+/* MAIN LAYOUT */
+/* ======================= */
+
+.Home__main {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+
+/* ======================= */
+/* MENU LATERAL */
+/* ======================= */
+
+.Home__menu {
+    width: 260px;
+    min-width: 260px;
+    background: var(--bg-main);
+    border-right: 1px solid var(--border-color);
+    height: calc(100vh - 70px);
+    position: fixed;
+    top: 70px;
+    left: 0;
+    overflow-y: auto;
+}
+
+
+/* ======================= */
+/* CONTENIDO */
+/* ======================= */
+
+.Home__content {
+     flex: 1;
+    margin-left: 260px;
+    padding: 30px 40px;
+    min-height: calc(100vh - 70px);
+    background: var(--bg-sidebar);
+}
+
+
+.Home__content h1 {
+    color: var(--dark-green);
+    margin-bottom: 15px;
+}
+
+.Home__content p {
+    color: var(--text-muted);
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+
+
+/* ======================= */
+/* FOOTER */
+/* ======================= */
+
+footer {
+    height: 50px;
+    background: var(--bg-main);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+
+/* ======================= */
+/* 📱 TABLET */
+/* ======================= */
+
+@media screen and (max-width: 900px) {
+
+    .Home__menu {
+        width: 220px;
+        min-width: 220px;
+    }
+
+    .Home__content {
+        margin-left: 220px;
+        padding: 20px;
+    }
+
+    footer {
+        margin-left: 220px;
+    }
+
+}
+
+
+/* ======================= */
+/* 📱 MOVIL */
+/* ======================= */
+
+@media screen and (max-width: 768px) {
+
+    .Home__main {
+        flex-direction: column;
+    }
+
+    /* EL MENU DEJA DE SER FIXED */
+    .Home__menu {
+        position: relative;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: auto;
+
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    /* EL CONTENIDO OCUPA TODO */
+    .Home__content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    footer {
+        margin-left: 0;
+    }
+
+}
+
+
+/* ======================= */
+/* 📱 MOVIL PEQUEÑO */
+/* ======================= */
+
+@media screen and (max-width: 480px) {
+
+    .Home__content h1 {
+        font-size: 1.3rem;
+    }
+
+    .Home__content p {
+        font-size: 0.9rem;
+    }
+
+}

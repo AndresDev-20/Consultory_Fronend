@@ -20,7 +20,7 @@ function Login(){
 
     return (
         <div className="Login">
-            <h1 className="Login__title">Bienvenido a Nuffy</h1>
+            <h1 className="Login__title">Bienvenido a Nuffys</h1>
             <div className="Login__container">
                 <h1 className="Login__container-title">Inicia sesión</h1>
                 <form onSubmit={handleSubmit(submit)} className="Login__container-form">

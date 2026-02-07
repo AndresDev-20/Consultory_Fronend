@@ -1,6 +1,6 @@
-import logo from"./img/logo.png"
+import logoHeader from "./img/logo_header.png"
 
 
 export const images = {
-    logo
+    logoHeader
 }
