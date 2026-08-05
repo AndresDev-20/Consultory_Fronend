@@ -1,0 +1,172 @@
+/* ====================== */
+/* ROOT */
+/* ====================== */
+
+.AddHeadquarter {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+
+/* ====================== */
+/* CONTAINER GRANDE */
+/* ====================== */
+
+.AddHeadquarter__container {
+    width: 100%;
+    max-width: 900px;
+    background: var(--bg-main);
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+
+
+/* ====================== */
+/* HEADER */
+/* ====================== */
+
+.AddHeadquarter__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+
+.AddHeadquarter__title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dark-green);
+}
+
+
+
+/* ====================== */
+/* BOTON CANCEL */
+/* ====================== */
+
+.AddHeadquarter__cancelBtn {
+    background: var(--error);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+
+/* ====================== */
+/* FORM */
+/* ====================== */
+
+.AddHeadquarter__form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+
+
+/* ====================== */
+/* FIELD */
+/* ====================== */
+
+.AddHeadquarter__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+.AddHeadquarter__field label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+
+
+/* ====================== */
+/* INPUT */
+/* ====================== */
+
+.AddHeadquarter__field input {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+    outline: none;
+    transition: 0.2s;
+}
+
+
+.AddHeadquarter__field input:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 2px rgba(0,128,100,0.15);
+}
+
+
+
+/* ====================== */
+/* DIRECCION FULL */
+/* ====================== */
+
+.AddHeadquarter__field--full {
+    grid-column: span 2;
+}
+
+
+
+/* ====================== */
+/* SUBMIT */
+/* ====================== */
+
+.AddHeadquarter__submitBtn {
+    grid-column: span 2;
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary-green);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+
+}
+
+
+.AddHeadquarter__submitBtn:hover {
+    background: var(--primary-green-hover);
+}
+
+
+
+/* ====================== */
+/* MOBILE */
+/* ====================== */
+
+@media screen and (max-width: 950px) {
+.AddHeadquarter__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+}

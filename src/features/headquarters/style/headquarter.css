@@ -1,0 +1,208 @@
+.Headquarter {
+    width: 100%;
+}
+
+/* ======================= */
+/* HEADER */
+/* ======================= */
+
+.Headquarter__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+/* ======================= */
+/* BUTTON ADD */
+/* ======================= */
+
+.Headquarter__addBtn {
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+
+.Headquarter__addBtn:hover {
+    background: var(--primary-green-hover);
+
+}
+
+/* ======================= */
+/* TITLE */
+/* ======================= */
+
+.Headquarter__title {
+    margin-bottom: 20px;
+    color: var(--dark-green);
+}
+
+
+/* ======================= */
+/* GRID */
+/* ======================= */
+
+.Headquarter__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+
+}
+
+
+/* ======================= */
+/* CARD */
+/* ======================= */
+
+.Headquarter__card {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: 0.2s ease;
+}
+
+
+.Headquarter__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+
+/* ======================= */
+/* TEXT */
+/* ======================= */
+
+.Headquarter__card h2 {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    min-height: 30px; 
+}
+
+
+.Headquarter__card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    min-height: 50px; 
+}
+
+
+.Headquarter__card span {
+    font-size: 0.85rem;
+    color: var(--primary-green);
+}
+
+
+/* ======================= */
+/* BUTTON */
+/* ======================= */
+
+.Headquarter__card button {
+    margin-top: 10px;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    background: var(--primary-green);
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+.Headquarter__card button:hover {
+    background: var(--primary-green-hover);
+}
+
+/* ======================= */
+/* BOTON FLOTANTE */
+/* ======================= */
+
+.Headquarter__floatingBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    background: var(--primary-green);
+    color: white;
+
+    border: none;
+    padding: 12px 18px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+    z-index: 1000;
+
+    transition: 0.2s;
+}
+
+.Headquarter__floatingBtn:hover {
+    background: var(--primary-green-hover);
+    transform: translateY(-2px);
+}
+
+
+/* ======================= */
+/* OVERLAY */
+/* ======================= */
+
+.Headquarter__add {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding-top: 20em;
+}
+
+
+/* ======================= */
+/* ANIMACION */
+/* ======================= */
+
+.Headquarter__add > * {
+    animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* ======================= */
+/* MOBILE */
+/* ======================= */
+
+@media screen and (max-width: 768px) {
+    .Headquarter__grid {
+        grid-template-columns: 1fr;
+
+    }
+
+}

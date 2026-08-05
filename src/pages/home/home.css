@@ -43,26 +43,6 @@
 /* CONTENIDO */
 /* ======================= */
 
-.Home__content {
-     flex: 1;
-    margin-left: 260px;
-    padding: 30px 40px;
-    min-height: calc(100vh - 70px);
-    background: var(--bg-sidebar);
-}
-
-
-.Home__content h1 {
-    color: var(--dark-green);
-    margin-bottom: 15px;
-}
-
-.Home__content p {
-    color: var(--text-muted);
-    max-width: 800px;
-    line-height: 1.6;
-}
-
 
 
 /* ======================= */
@@ -92,10 +72,6 @@ footer {
         min-width: 220px;
     }
 
-    .Home__content {
-        margin-left: 220px;
-        padding: 20px;
-    }
 
     footer {
         margin-left: 220px;
@@ -128,10 +104,7 @@ footer {
     }
 
     /* EL CONTENIDO OCUPA TODO */
-    .Home__content {
-        margin-left: 0;
-        padding: 15px;
-    }
+    
 
     footer {
         margin-left: 0;
