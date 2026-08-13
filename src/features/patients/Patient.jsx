@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import usePatient from "../../hooks/usePatient";
 import "./style/patient.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import CreatePatient from "./CreatePatient";
 
 function Patient() {
   const [listPatients, setListPatients] = useState([]);
   const [search, setSearch] = useState("");
   const [showCreatePatient, setShowCreatePatient] = useState(false);
+  const navigate = useNavigate();
 
   const { id } = useParams();
   const { patients, getAllPatients } = usePatient();
@@ -49,6 +50,24 @@ function Patient() {
 
   return (
     <main className="patients">
+      <button
+        type="button"
+        className="patients__back"
+        onClick={() => navigate("/")}
+      >
+        <svg
+          className="patients__back-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path d="M19 12H5" />
+          <path d="M12 19l-7-7 7-7" />
+        </svg>
+
+        <span>Volver al inicio</span>
+      </button>
       <header className="patients__header">
         <div className="patients__heading">
           <span className="patients__eyebrow">Gestión clínica</span>
