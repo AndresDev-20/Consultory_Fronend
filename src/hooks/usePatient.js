@@ -6,7 +6,7 @@ const Api = import.meta.env.VITE_REACT_APP_URL;
 
 
 const usePatient = () => {
-    const [patient, setPatient] = useState();
+    const [patients, setPatient] = useState();
     const getAllPatients = () => {
         axios.get(`${Api}/patients`, getConfingToken())
         .then(res => {
@@ -19,7 +19,7 @@ const usePatient = () => {
     }
 
 
-    return {getAllPatients, patient}
+    return {getAllPatients, patients}
 }
 
 export default usePatient;
