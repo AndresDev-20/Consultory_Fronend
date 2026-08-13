@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./style/Headquarter.css";
+import "./style/headquarter.css";
 
 function ListHeadquarter({ headquarter, option }) {
 
