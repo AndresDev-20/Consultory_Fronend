@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import "./MainLayout.css";
+import "./mainLayout.css";
 import Header from './header/Header';
 import Menu from './menu/Menu';
 // Importa aquí tus componentes de Menú, Header, etc.
