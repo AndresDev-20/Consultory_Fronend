@@ -6,7 +6,7 @@ function ListHeadquarter({ headquarter, option }) {
   const navigate = useNavigate();
   const handleViewPatients = (id) => {
     console.log(`View patients for headquarter with ID: ${id}`);
-    navigate(`/patients/${id}`);
+    navigate(`/consultorio/${id}/patients`);
   }
 
   return (

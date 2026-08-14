@@ -53,7 +53,7 @@ function Patient() {
       <button
         type="button"
         className="patients__back"
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/consultorios")}
       >
         <svg
           className="patients__back-icon"
@@ -66,7 +66,7 @@ function Patient() {
           <path d="M12 19l-7-7 7-7" />
         </svg>
 
-        <span>Volver al inicio</span>
+        <span>Volver</span>
       </button>
       <header className="patients__header">
         <div className="patients__heading">

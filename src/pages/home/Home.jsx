@@ -9,7 +9,7 @@ function Home() {
 
     return (
         <div className="Home">
-            <Headquarter/>
+            Dashboard
         </div>
     )
 }

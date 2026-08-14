@@ -5,6 +5,7 @@ import Home from './pages/home/Home'
 import Login from './pages/login/Login'
 import Patient from './features/patients/Patient'
 import MainLayout from './components/MainLayout'
+import Headquarter from './features/headquarters/Headquarter'
 
 function App() {
 
@@ -15,11 +16,9 @@ function App() {
 
       <Route element={<ProtectedRoutes/>}>
       <Route element={<MainLayout />}>
-          {/* Al entrar a "/" se renderiza Home dentro del Layout */}
           <Route path="/" element={<Home />} /> 
-          
-          {/* Al entrar a "/patients/5" se renderiza Patient dentro del mismo Layout */}
-          <Route path="patients/:id" element={<Patient />} />
+          <Route path="/consultorios" element={<Headquarter />} />
+          <Route path="/consultorio/:id/patients" element={<Patient />} />
         </Route>
       </Route>
 
