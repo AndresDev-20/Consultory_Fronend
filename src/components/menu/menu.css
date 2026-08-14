@@ -1,160 +1,98 @@
-/* ================================================= */
-/* MENU ROOT                                         */
-/* ================================================= */
-
 .Menu {
   width: 100%;
   height: 100%;
-
   display: flex;
   flex-direction: column;
-
   background-color: var(--bg-sidebar);
-
   color: var(--text-main);
-
   overflow: hidden;
 }
 
-
-/* ================================================= */
-/* BRAND                                             */
-/* ================================================= */
-
 .Menu__brand {
   min-height: 82px;
-
   display: flex;
   align-items: center;
-
   gap: 12px;
-
   padding: 18px 20px;
-
   border-bottom: 1px solid var(--border-color);
 }
-
 
 .Menu__brand-icon {
   width: 42px;
   height: 42px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
-
   border-radius: 10px;
-
   background-color: var(--primary-green);
-
   color: white;
-
   font-size: 1.25rem;
   font-weight: 700;
 }
 
-
 .Menu__brand-info {
   display: flex;
   flex-direction: column;
-
   gap: 2px;
-
   min-width: 0;
 }
 
-
 .Menu__brand-name {
   color: var(--dark-green);
-
   font-size: 1rem;
   font-weight: 800;
-
   letter-spacing: 0.08em;
 }
 
-
 .Menu__brand-description {
   color: var(--text-muted);
-
   font-size: 0.72rem;
 }
 
 
-/* ================================================= */
-/* NAVIGATION                                        */
-/* ================================================= */
-
 .Menu__navigation {
   flex: 1;
-
   overflow-y: auto;
-
   padding: 22px 14px;
 }
 
-
-/* ================================================= */
-/* SCROLLBAR                                         */
-/* ================================================= */
 
 .Menu__navigation::-webkit-scrollbar {
   width: 5px;
 }
 
-
 .Menu__navigation::-webkit-scrollbar-track {
   background: transparent;
 }
 
-
 .Menu__navigation::-webkit-scrollbar-thumb {
   background-color: var(--border-color);
-
   border-radius: 10px;
 }
 
 
-/* ================================================= */
-/* SECTION                                           */
-/* ================================================= */
-
 .Menu__section {
   display: flex;
   flex-direction: column;
-
   gap: 4px;
-
   margin-bottom: 26px;
 }
-
 
 .Menu__section:last-child {
   margin-bottom: 0;
 }
 
 
-/* ================================================= */
-/* SECTION TITLE                                     */
-/* ================================================= */
-
 .Menu__section-title {
   padding: 0 10px;
-
   margin-bottom: 7px;
-
   color: var(--text-muted);
-
   font-size: 0.68rem;
   font-weight: 700;
-
   text-transform: uppercase;
-
   letter-spacing: 0.09em;
 }
-
 
 /* ================================================= */
 /* GENERIC ITEM                                      */
@@ -162,38 +100,27 @@
 
 .Menu__item {
   min-height: 43px;
-
   display: flex;
   align-items: center;
-
   gap: 12px;
-
   padding: 9px 11px;
-
   border-radius: 8px;
-
   color: var(--text-main);
-
   cursor: pointer;
-
   transition:
     background-color 0.18s ease,
     color 0.18s ease,
     transform 0.18s ease;
 }
 
-
 .Menu__item:hover {
   background-color: var(--light-green);
-
   color: var(--dark-green);
 }
-
 
 .Menu__item:active {
   transform: scale(0.99);
 }
-
 
 /* ================================================= */
 /* ITEM ICON                                         */
@@ -205,12 +132,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
-
   font-size: 1rem;
 }
-
 
 /* ================================================= */
 /* ITEM LABEL                                        */
@@ -222,19 +146,15 @@
   font-weight: 500;
 }
 
-
 /* ================================================= */
 /* ACTIVE ITEM                                       */
 /* ================================================= */
 
 .Menu__item--active {
   background-color: var(--light-green);
-
   color: var(--dark-green);
-
   font-weight: 600;
 }
-
 
 /* ================================================= */
 /* PATIENT                                           */
@@ -243,12 +163,9 @@
 .Menu__patient {
   display: flex;
   flex-direction: column;
-
   gap: 8px;
-
   padding: 8px 4px;
 }
-
 
 /* ================================================= */
 /* PATIENT HEADER                                    */
@@ -263,7 +180,6 @@
   padding: 8px 8px 10px;
 }
 
-
 /* ================================================= */
 /* PATIENT AVATAR                                    */
 /* ================================================= */
@@ -271,23 +187,16 @@
 .Menu__patient-avatar {
   width: 38px;
   height: 38px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
-
   border-radius: 50%;
-
   background-color: var(--light-green);
-
   color: var(--dark-green);
-
   font-size: 0.78rem;
   font-weight: 700;
 }
-
 
 /* ================================================= */
 /* PATIENT INFO                                      */
@@ -295,33 +204,24 @@
 
 .Menu__patient-info {
   min-width: 0;
-
   display: flex;
   flex-direction: column;
-
   gap: 2px;
 }
 
-
 .Menu__patient-name {
   overflow: hidden;
-
   color: var(--text-main);
-
   font-size: 0.83rem;
   font-weight: 600;
-
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-
 .Menu__patient-document {
   color: var(--text-muted);
-
   font-size: 0.7rem;
 }
-
 
 /* ================================================= */
 /* PATIENT NAVIGATION                                */
@@ -329,30 +229,21 @@
 
 .Menu__patient-navigation {
   position: relative;
-
   display: flex;
   flex-direction: column;
-
   margin-left: 25px;
-
   padding-left: 15px;
 }
 
-
 .Menu__patient-navigation::before {
   content: "";
-
   position: absolute;
-
   top: 0;
   bottom: 0;
   left: 0;
-
   width: 1px;
-
   background-color: var(--border-color);
 }
-
 
 /* ================================================= */
 /* PATIENT ITEM                                      */
@@ -360,34 +251,24 @@
 
 .Menu__patient-item {
   position: relative;
-
   min-height: 36px;
 
   display: flex;
   align-items: center;
-
   padding: 7px 10px;
-
   border-radius: 7px;
-
   color: var(--text-muted);
-
   font-size: 0.8rem;
-
   cursor: pointer;
-
   transition:
     background-color 0.18s ease,
     color 0.18s ease;
 }
 
-
 .Menu__patient-item:hover {
   background-color: var(--light-green);
-
   color: var(--dark-green);
 }
-
 
 /* ================================================= */
 /* PATIENT ACTIVE                                    */
@@ -395,28 +276,19 @@
 
 .Menu__patient-item--active {
   background-color: var(--light-green);
-
   color: var(--dark-green);
-
   font-weight: 600;
 }
 
-
 .Menu__patient-item--active::before {
   content: "";
-
   position: absolute;
-
   left: -16px;
-
   width: 3px;
   height: 18px;
-
   border-radius: 3px;
-
   background-color: var(--primary-green);
 }
-
 
 /* ================================================= */
 /* FOOTER                                            */
@@ -424,10 +296,8 @@
 
 .Menu__footer {
   padding: 14px;
-
   border-top: 1px solid var(--border-color);
 }
-
 
 /* ================================================= */
 /* USER                                              */
@@ -436,20 +306,13 @@
 .Menu__user {
   display: flex;
   align-items: center;
-
   gap: 10px;
-
   margin-top: 8px;
-
   padding: 10px 9px;
-
   border-radius: 8px;
-
   background-color: var(--bg-main);
-
   border: 1px solid var(--border-color);
 }
-
 
 /* ================================================= */
 /* USER AVATAR                                       */
@@ -458,23 +321,16 @@
 .Menu__user-avatar {
   width: 34px;
   height: 34px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
-
   border-radius: 50%;
-
   background-color: var(--primary-green);
-
   color: white;
-
   font-size: 0.78rem;
   font-weight: 700;
 }
-
 
 /* ================================================= */
 /* USER INFO                                         */
@@ -482,40 +338,30 @@
 
 .Menu__user-info {
   min-width: 0;
-
   display: flex;
   flex-direction: column;
-
   gap: 2px;
 }
 
-
 .Menu__user-name {
   overflow: hidden;
-
   color: var(--text-main);
-
   font-size: 0.78rem;
   font-weight: 600;
-
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-
 .Menu__user-role {
   color: var(--text-muted);
-
   font-size: 0.68rem;
 }
-
 
 /* ================================================= */
 /* TABLET                                            */
 /* ================================================= */
 
 @media screen and (max-width: 900px) {
-
   .Menu__brand {
     padding: 16px;
   }
@@ -523,22 +369,18 @@
   .Menu__navigation {
     padding: 18px 10px;
   }
-
 }
-
 
 /* ================================================= */
 /* MOBILE                                            */
 /* ================================================= */
 
 @media screen and (max-width: 768px) {
-
   .Menu {
     height: auto;
 
     overflow: visible;
   }
-
 
   .Menu__brand {
     min-height: 68px;
@@ -546,21 +388,17 @@
     padding: 12px 15px;
   }
 
-
   .Menu__navigation {
     overflow: visible;
 
     padding: 12px;
   }
 
-
   .Menu__footer {
     padding: 10px 12px;
   }
 
-
   .Menu__section {
     margin-bottom: 18px;
   }
-
 }

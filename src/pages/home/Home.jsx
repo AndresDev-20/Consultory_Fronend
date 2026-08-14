@@ -1,5 +1,5 @@
+import Dashboard from "../../features/dashboard/Dashboard";
 import "./home.css";
-import Headquarter from "../../features/headquarters/Headquarter";
 import { Routes } from "react-router-dom";
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
 
     return (
         <div className="Home">
-            Dashboard
+            <Dashboard />
         </div>
     )
 }

@@ -1,0 +1,731 @@
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+.Dashboard {
+  width: 100%;
+  min-height: 100%;
+  padding: 24px 28px;
+
+  background-color: var(--bg-main);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.Dashboard__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.Dashboard__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.Dashboard__eyebrow {
+  color: var(--primary-green);
+
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.Dashboard__title {
+  color: var(--dark-green);
+
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.Dashboard__description {
+  color: var(--text-muted);
+
+  font-size: 0.78rem;
+}
+
+.Dashboard__period {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 11px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+
+  background-color: var(--bg-main);
+  color: var(--text-main);
+
+  font-size: 0.73rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.Dashboard__period:hover {
+  border-color: var(--primary-green);
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.Dashboard__period-icon {
+  color: var(--primary-green);
+}
+
+.Dashboard__period-arrow {
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   MÉTRICAS
+   ========================================================= */
+
+.Dashboard__metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.Dashboard__metric {
+  padding: 15px 17px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+
+  background-color: var(--bg-main);
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.025);
+
+  transition: all 0.2s ease;
+}
+
+.Dashboard__metric:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.055);
+}
+
+.Dashboard__metric-header {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.Dashboard__metric-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 7px;
+
+  background-color: var(--light-green);
+  color: var(--primary-green);
+
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.Dashboard__metric-icon--appointments {
+  background-color: #eef6ff;
+}
+
+.Dashboard__metric-icon--sessions {
+  background-color: #f3efff;
+}
+
+.Dashboard__metric-icon--income {
+  background-color: #e9f8f4;
+}
+
+.Dashboard__metric-label {
+  color: var(--text-muted);
+
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.Dashboard__metric-value {
+  display: block;
+
+  margin-top: 12px;
+
+  color: var(--text-main);
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.Dashboard__metric-footer {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+  margin-top: 9px;
+}
+
+.Dashboard__metric-change {
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.Dashboard__metric-change--positive {
+  color: var(--primary-green);
+}
+
+.Dashboard__metric-period {
+  color: var(--text-muted);
+
+  font-size: 0.62rem;
+}
+
+/* =========================================================
+   REPORTES
+   ========================================================= */
+
+.Dashboard__reports {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.7fr)
+    minmax(270px, 0.8fr);
+
+  gap: 16px;
+
+  margin-bottom: 16px;
+}
+
+/* =========================================================
+   PANELES
+   ========================================================= */
+
+.Dashboard__panel {
+  min-width: 0;
+
+  padding: 18px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+
+  background-color: var(--bg-main);
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.025);
+}
+
+.Dashboard__panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 16px;
+}
+
+.Dashboard__panel-title {
+  color: var(--text-main);
+
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.Dashboard__panel-description {
+  margin-top: 3px;
+
+  color: var(--text-muted);
+
+  font-size: 0.67rem;
+}
+
+.Dashboard__panel-link {
+  color: var(--primary-green);
+
+  font-size: 0.67rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+.Dashboard__panel-link:hover {
+  color: var(--primary-green-hover);
+}
+
+/* =========================================================
+   GRÁFICO
+   ========================================================= */
+
+.Dashboard__chart {
+  display: flex;
+
+  height: 190px;
+}
+
+.Dashboard__chart-scale {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 30px;
+
+  padding-bottom: 22px;
+
+  color: var(--text-muted);
+
+  font-size: 0.58rem;
+  text-align: right;
+}
+
+.Dashboard__chart-body {
+  position: relative;
+
+  flex: 1;
+}
+
+.Dashboard__chart-lines {
+  position: absolute;
+
+  inset: 0 0 23px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Dashboard__chart-lines span {
+  width: 100%;
+
+  border-top: 1px dashed var(--border-color);
+}
+
+.Dashboard__bars {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+
+  gap: 14px;
+
+  padding: 0 8px;
+}
+
+.Dashboard__bar-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 42px;
+
+  height: 100%;
+
+  gap: 7px;
+}
+
+.Dashboard__bar {
+  width: 100%;
+
+  min-height: 4px;
+
+  border-radius: 5px 5px 2px 2px;
+
+  background-color: var(--primary-green);
+
+  opacity: 0.9;
+
+  transition: opacity 0.2s ease;
+}
+
+.Dashboard__bar:hover {
+  opacity: 0.7;
+}
+
+.Dashboard__bar-label {
+  color: var(--text-muted);
+
+  font-size: 0.58rem;
+}
+
+/* =========================================================
+   PACIENTES
+   ========================================================= */
+
+.Dashboard__patient-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 190px;
+
+  gap: 25px;
+}
+
+.Dashboard__donut {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 125px;
+  height: 125px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: conic-gradient(
+    var(--primary-green) 0 75%,
+    #8dd7c5 75% 92%,
+    #dce5e3 92% 100%
+  );
+}
+
+.Dashboard__donut-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  width: 86px;
+  height: 86px;
+
+  border-radius: 50%;
+
+  background-color: var(--bg-main);
+}
+
+.Dashboard__donut-center strong {
+  color: var(--dark-green);
+
+  font-size: 1.1rem;
+}
+
+.Dashboard__donut-center span {
+  margin-top: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 0.58rem;
+}
+
+.Dashboard__legend {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.Dashboard__legend-item {
+  display: grid;
+
+  grid-template-columns: 7px minmax(70px, auto) auto;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 0.65rem;
+}
+
+.Dashboard__legend-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+}
+
+.Dashboard__legend-dot--active {
+  background-color: var(--primary-green);
+}
+
+.Dashboard__legend-dot--treatment {
+  background-color: #8dd7c5;
+}
+
+.Dashboard__legend-dot--inactive {
+  background-color: #dce5e3;
+}
+
+.Dashboard__legend-label {
+  color: var(--text-muted);
+}
+
+.Dashboard__legend-item strong {
+  color: var(--text-main);
+}
+
+/* =========================================================
+   SEGUNDA FILA
+   ========================================================= */
+
+.Dashboard__bottom {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.7fr)
+    minmax(270px, 0.8fr);
+
+  gap: 16px;
+}
+
+/* =========================================================
+   CITAS
+   ========================================================= */
+
+.Dashboard__appointments {
+  display: flex;
+  flex-direction: column;
+}
+
+.Dashboard__appointment {
+  display: grid;
+
+  grid-template-columns:
+    58px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 10px 0;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.Dashboard__appointment:last-child {
+  border-bottom: 0;
+}
+
+.Dashboard__appointment-time {
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+.Dashboard__appointment-time strong {
+  color: var(--text-main);
+
+  font-size: 0.72rem;
+}
+
+.Dashboard__appointment-time span {
+  color: var(--text-muted);
+
+  font-size: 0.56rem;
+}
+
+.Dashboard__appointment-info {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  gap: 2px;
+}
+
+.Dashboard__appointment-info strong {
+  overflow: hidden;
+
+  color: var(--text-main);
+
+  font-size: 0.72rem;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Dashboard__appointment-info span {
+  color: var(--text-muted);
+
+  font-size: 0.61rem;
+}
+
+.Dashboard__appointment-status {
+  padding: 4px 7px;
+
+  border-radius: 20px;
+
+  background-color: var(--light-green);
+  color: var(--primary-green);
+
+  font-size: 0.57rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.Dashboard__appointment-status--pending {
+  background-color: #fff3ed;
+
+  color: var(--warning);
+}
+
+/* =========================================================
+   RESUMEN
+   ========================================================= */
+
+.Dashboard__summary {
+  display: flex;
+  flex-direction: column;
+}
+
+.Dashboard__summary-item {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 0;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.Dashboard__summary-item:last-child {
+  border-bottom: 0;
+}
+
+.Dashboard__summary-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 29px;
+  height: 29px;
+
+  flex-shrink: 0;
+
+  border-radius: 6px;
+
+  background-color: var(--light-green);
+  color: var(--primary-green);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.Dashboard__summary-content {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+
+  min-width: 0;
+
+  gap: 2px;
+}
+
+.Dashboard__summary-content strong {
+  color: var(--text-main);
+
+  font-size: 0.66rem;
+}
+
+.Dashboard__summary-content span {
+  color: var(--text-muted);
+
+  font-size: 0.57rem;
+}
+
+.Dashboard__summary-value {
+  color: var(--dark-green);
+
+  font-size: 0.7rem;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (max-width: 1100px) {
+  .Dashboard {
+    padding: 22px;
+  }
+
+  .Dashboard__metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Dashboard__reports,
+  .Dashboard__bottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+  .Dashboard {
+    padding: 16px;
+  }
+
+  .Dashboard__header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .Dashboard__title {
+    font-size: 1.5rem;
+  }
+
+  .Dashboard__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .Dashboard__patient-chart {
+    justify-content: center;
+
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   MÓVIL PEQUEÑO
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+  .Dashboard {
+    padding: 12px;
+  }
+
+  .Dashboard__panel {
+    padding: 14px;
+  }
+
+  .Dashboard__appointment {
+    grid-template-columns:
+      50px
+      minmax(0, 1fr);
+  }
+
+  .Dashboard__appointment-status {
+    display: none;
+  }
+}
