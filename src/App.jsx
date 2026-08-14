@@ -6,6 +6,7 @@ import Login from './pages/login/Login'
 import Patient from './features/patients/Patient'
 import MainLayout from './components/MainLayout'
 import Headquarter from './features/headquarters/Headquarter'
+import PatientId from './features/patients/PatientId'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} /> 
           <Route path="/consultorios" element={<Headquarter />} />
           <Route path="/consultorio/:id/patients" element={<Patient />} />
+          <Route path="/consultorio/:id/patients/:patientId" element={<PatientId />} />
         </Route>
       </Route>
 

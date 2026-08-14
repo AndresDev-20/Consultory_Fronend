@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import usePatient from "../../hooks/usePatient";
 import "./style/patient.css";
-import { useNavigate, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import CreatePatient from "./CreatePatient";
 
 function Patient() {
@@ -9,7 +9,6 @@ function Patient() {
   const [search, setSearch] = useState("");
   const [showCreatePatient, setShowCreatePatient] = useState(false);
   const navigate = useNavigate();
-
   const { id } = useParams();
   const { patients, getAllPatients } = usePatient();
 
@@ -204,10 +203,10 @@ function Patient() {
                     </td>
 
                     <td>
-                      <button className="patients__button" type="button">
+                      <NavLink to={`/consultorio/${id}/patients/${patient.id}`} className="patients__button" type="button">
                         Ver
                         <span>→</span>
-                      </button>
+                      </NavLink>
                     </td>
                   </tr>
                 ))
