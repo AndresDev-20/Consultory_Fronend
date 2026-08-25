@@ -203,7 +203,11 @@ function Patient() {
                     </td>
 
                     <td>
-                      <NavLink to={`/consultorio/${id}/patients/${patient.id}`} className="patients__button" type="button">
+                      <NavLink
+                        to={`/consultorio/${id}/patients/${patient.id}`}
+                        className="patients__button"
+                        type="button"
+                      >
                         Ver
                         <span>→</span>
                       </NavLink>
