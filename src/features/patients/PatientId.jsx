@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import usePatient from "../../hooks/usePatient";
 
 import "./style/patientId.css";
+import ClinicalRecord from "../clinicalrecord/ClinicalRecord";
 
 const PatientId = () => {
   const { id, patientId } = useParams();
@@ -441,7 +442,7 @@ const PatientId = () => {
         </article>
 
       </section>
-
+      <ClinicalRecord IdPatient={patientId} />
     </main>
   );
 };
