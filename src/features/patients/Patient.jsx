@@ -16,6 +16,10 @@ function Patient() {
     getAllPatients();
   }, []);
 
+  const handlePatientCreated = async () => {
+    await getAllPatients();
+  }
+
   useEffect(() => {
     if (patients) {
       const filteredPatients = patients.filter(
@@ -235,7 +239,7 @@ function Patient() {
       {/* CREAR PACIENTE */}
 
       {showCreatePatient && (
-        <CreatePatient onClose={() => setShowCreatePatient(false)} />
+        <CreatePatient onClose={() => setShowCreatePatient(false)} officeId={id} onPatientCreated={handlePatientCreated}/>
       )}
     </main>
   );
