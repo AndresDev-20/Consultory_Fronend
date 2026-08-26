@@ -1,34 +1,37 @@
-import {
-  NavLink,
-  useMatch,
-  useParams
-} from "react-router-dom";
-
+import { NavLink, useMatch, useParams } from "react-router-dom";
 import "./menu.css";
+import usePatient from "../../hooks/usePatient";
+import { useEffect } from "react";
 
 function Menu() {
-
   const { id, patientId } = useParams();
 
-  const insideConsultorio = useMatch(
-    "/consultorio/:id/patients"
-  );
+  const { getOnePatient, PatientOne } = usePatient(patientId);
 
-  const insidePatient = useMatch(
-    "/consultorio/:id/patients/:patientId/*"
-  );
+  const insideConsultorio = useMatch("/consultorio/:id/patients");
+  const insidePatient = useMatch("/consultorio/:id/patients/:patientId/*");
+
+  useEffect(() => {
+      getOnePatient();
+  }, []);
+
+  const patientName = PatientOne
+    ? `${PatientOne.firstNames ?? ""} ${PatientOne.lastNames ?? ""}`.trim()
+    : "Cargando paciente...";
+
+  const patientInitials = PatientOne
+    ? `${PatientOne.firstNames?.charAt(0) ?? ""}${PatientOne.lastNames?.charAt(0) ?? ""}`
+    : "...";
 
   return (
     <aside className="Menu">
-
       <nav className="Menu__navigation">
 
-        {/* ========================================= */}
-        {/* PRINCIPAL */}
-        {/* ========================================= */}
+        {/* =========================================
+            PRINCIPAL
+        ========================================= */}
 
         <section className="Menu__section">
-
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -37,15 +40,9 @@ function Menu() {
                 : "Menu__item"
             }
           >
-            <span className="Menu__item-icon">
-              🏠
-            </span>
-
-            <span className="Menu__item-label">
-              Inicio
-            </span>
+            <span className="Menu__item-icon">🏠</span>
+            <span className="Menu__item-label">Inicio</span>
           </NavLink>
-
 
           <NavLink
             to="/consultorios"
@@ -55,22 +52,15 @@ function Menu() {
                 : "Menu__item"
             }
           >
-            <span className="Menu__item-icon">
-              🏥
-            </span>
-
-            <span className="Menu__item-label">
-              Consultorios
-            </span>
+            <span className="Menu__item-icon">🏥</span>
+            <span className="Menu__item-label">Consultorios</span>
           </NavLink>
 
-
-          {/* ===================================== */}
-          {/* PACIENTES DEL CONSULTORIO */}
-          {/* ===================================== */}
+          {/* =====================================
+              PACIENTES DEL CONSULTORIO
+          ===================================== */}
 
           {(insideConsultorio || insidePatient) && (
-
             <NavLink
               to={`/consultorio/${id}/patients`}
               className={({ isActive }) =>
@@ -79,29 +69,18 @@ function Menu() {
                   : "Menu__item"
               }
             >
-
-              <span className="Menu__item-icon">
-                👥
-              </span>
-
-              <span className="Menu__item-label">
-                Pacientes
-              </span>
-
+              <span className="Menu__item-icon">👥</span>
+              <span className="Menu__item-label">Pacientes</span>
             </NavLink>
-
           )}
-
         </section>
 
-
-        {/* ========================================= */}
-        {/* PACIENTE ACTUAL */}
-        {/* ========================================= */}
+        {/* =========================================
+            PACIENTE ACTUAL
+        ========================================= */}
 
         {insidePatient && (
-
-          <section className="Menu__section">
+          <section className="Menu__section Menu__section--patient">
 
             <span className="Menu__section-title">
               Paciente actual
@@ -109,28 +88,29 @@ function Menu() {
 
             <div className="Menu__patient">
 
-              {/* Aquí después pondremos los datos reales */}
-              
+              {/* PACIENTE */}
+
               <div className="Menu__patient-header">
 
                 <div className="Menu__patient-avatar">
-                  JP
+                  {patientInitials}
                 </div>
 
                 <div className="Menu__patient-info">
 
                   <span className="Menu__patient-name">
-                    Juan Pérez
+                    {patientName}
                   </span>
 
                   <span className="Menu__patient-document">
-                    CC 1.234.567
+                    CC {PatientOne?.cedula ?? "—"}
                   </span>
 
                 </div>
 
               </div>
 
+              {/* NAVEGACIÓN DEL PACIENTE */}
 
               <div className="Menu__patient-navigation">
 
@@ -143,9 +123,8 @@ function Menu() {
                       : "Menu__patient-item"
                   }
                 >
-                  Resumen
+                  <span>Resumen</span>
                 </NavLink>
-
 
                 <NavLink
                   to={`/consultorio/${id}/patients/${patientId}/clinical-records`}
@@ -155,9 +134,8 @@ function Menu() {
                       : "Menu__patient-item"
                   }
                 >
-                  Historia clínica
+                  <span>Historia clínica</span>
                 </NavLink>
-
 
                 <NavLink
                   to={`/consultorio/${id}/patients/${patientId}/clinical-notes`}
@@ -167,9 +145,8 @@ function Menu() {
                       : "Menu__patient-item"
                   }
                 >
-                  Notas clínicas
+                  <span>Notas clínicas</span>
                 </NavLink>
-
 
                 <NavLink
                   to={`/consultorio/${id}/patients/${patientId}/prescriptions`}
@@ -179,9 +156,8 @@ function Menu() {
                       : "Menu__patient-item"
                   }
                 >
-                  Prescripciones
+                  <span>Prescripciones</span>
                 </NavLink>
-
 
                 <NavLink
                   to={`/consultorio/${id}/patients/${patientId}/appointments`}
@@ -191,24 +167,19 @@ function Menu() {
                       : "Menu__patient-item"
                   }
                 >
-                  Citas
+                  <span>Citas</span>
                 </NavLink>
 
               </div>
-
             </div>
-
           </section>
-
         )}
 
-
-        {/* ========================================= */}
-        {/* CITAS GENERALES */}
-        {/* ========================================= */}
+        {/* =========================================
+            CITAS GENERALES
+        ========================================= */}
 
         <section className="Menu__section">
-
           <NavLink
             to="/appointments"
             className={({ isActive }) =>
@@ -217,31 +188,20 @@ function Menu() {
                 : "Menu__item"
             }
           >
-
-            <span className="Menu__item-icon">
-              📅
-            </span>
-
-            <span className="Menu__item-label">
-              Citas
-            </span>
-
+            <span className="Menu__item-icon">📅</span>
+            <span className="Menu__item-label">Citas</span>
           </NavLink>
-
         </section>
 
-
-        {/* ========================================= */}
-        {/* GESTIÓN */}
-        {/* ========================================= */}
+        {/* =========================================
+            GESTIÓN
+        ========================================= */}
 
         <section className="Menu__section">
 
           <span className="Menu__section-title">
             Gestión
           </span>
-
-          {/* Productos */}
 
           <NavLink
             to="/products"
@@ -251,17 +211,9 @@ function Menu() {
                 : "Menu__item"
             }
           >
-            <span className="Menu__item-icon">
-              📦
-            </span>
-
-            <span className="Menu__item-label">
-              Productos
-            </span>
+            <span className="Menu__item-icon">📦</span>
+            <span className="Menu__item-label">Productos</span>
           </NavLink>
-
-
-          {/* Facturación */}
 
           <NavLink
             to="/invoices"
@@ -271,17 +223,9 @@ function Menu() {
                 : "Menu__item"
             }
           >
-            <span className="Menu__item-icon">
-              🧾
-            </span>
-
-            <span className="Menu__item-label">
-              Facturación
-            </span>
+            <span className="Menu__item-icon">🧾</span>
+            <span className="Menu__item-label">Facturación</span>
           </NavLink>
-
-
-          {/* Pagos */}
 
           <NavLink
             to="/payments"
@@ -291,19 +235,13 @@ function Menu() {
                 : "Menu__item"
             }
           >
-            <span className="Menu__item-icon">
-              💳
-            </span>
-
-            <span className="Menu__item-label">
-              Pagos
-            </span>
+            <span className="Menu__item-icon">💳</span>
+            <span className="Menu__item-label">Pagos</span>
           </NavLink>
 
         </section>
 
       </nav>
-
     </aside>
   );
 }

@@ -58,7 +58,6 @@ const PatientId = () => {
 
   return (
     <main className="PatientId">
-
       {/* =========================================
           BACK
       ========================================= */}
@@ -87,33 +86,21 @@ const PatientId = () => {
       ========================================= */}
 
       <header className="PatientId__header">
-
         <div className="PatientId__identity">
-
-          <div className="PatientId__avatar">
-            {firstNames?.charAt(0)}
-          </div>
+          <div className="PatientId__avatar">{firstNames?.charAt(0)}</div>
 
           <div className="PatientId__identity-info">
+            <span className="PatientId__eyebrow">Información clínica</span>
 
-            <span className="PatientId__eyebrow">
-              Información clínica
-            </span>
-
-            <h1 className="PatientId__name">
-              {fullName}
-            </h1>
+            <h1 className="PatientId__name">{fullName}</h1>
 
             <span className="PatientId__patient-number">
               Paciente #{PatientOne.id}
             </span>
-
           </div>
-
         </div>
 
         <div className="PatientId__header-status">
-
           <span
             className={`PatientId__status ${
               state
@@ -123,9 +110,7 @@ const PatientId = () => {
           >
             {state ? "Activo" : "Inactivo"}
           </span>
-
         </div>
-
       </header>
 
       {/* =========================================
@@ -133,33 +118,24 @@ const PatientId = () => {
       ========================================= */}
 
       <section className="PatientId__content">
-
         {/* =========================================
             PERSONAL INFORMATION
         ========================================= */}
 
         <article className="PatientId__card">
-
           <div className="PatientId__card-header">
-
             <div>
-              <span className="PatientId__card-eyebrow">
-                Datos personales
-              </span>
+              <span className="PatientId__card-eyebrow">Datos personales</span>
 
               <h2 className="PatientId__card-title">
                 Información del paciente
               </h2>
             </div>
-
           </div>
 
           <div className="PatientId__data-grid">
-
             <div className="PatientId__field">
-              <span className="PatientId__field-label">
-                Nombres
-              </span>
+              <span className="PatientId__field-label">Nombres</span>
 
               <span className="PatientId__field-value">
                 {firstNames || "No registrado"}
@@ -167,9 +143,7 @@ const PatientId = () => {
             </div>
 
             <div className="PatientId__field">
-              <span className="PatientId__field-label">
-                Apellidos
-              </span>
+              <span className="PatientId__field-label">Apellidos</span>
 
               <span className="PatientId__field-value">
                 {lastNames || "No registrado"}
@@ -177,9 +151,7 @@ const PatientId = () => {
             </div>
 
             <div className="PatientId__field">
-              <span className="PatientId__field-label">
-                Cédula
-              </span>
+              <span className="PatientId__field-label">Cédula</span>
 
               <span className="PatientId__field-value PatientId__field-value--strong">
                 {cedula || "No registrada"}
@@ -187,9 +159,7 @@ const PatientId = () => {
             </div>
 
             <div className="PatientId__field">
-              <span className="PatientId__field-label">
-                Edad
-              </span>
+              <span className="PatientId__field-label">Edad</span>
 
               <span className="PatientId__field-value">
                 {age ? `${age} años` : "No registrada"}
@@ -197,9 +167,7 @@ const PatientId = () => {
             </div>
 
             <div className="PatientId__field">
-              <span className="PatientId__field-label">
-                Sexo
-              </span>
+              <span className="PatientId__field-label">Sexo</span>
 
               <span className="PatientId__field-value">
                 {sex || "No registrado"}
@@ -207,17 +175,13 @@ const PatientId = () => {
             </div>
 
             <div className="PatientId__field">
-              <span className="PatientId__field-label">
-                Estado civil
-              </span>
+              <span className="PatientId__field-label">Estado civil</span>
 
               <span className="PatientId__field-value">
                 {civil_state || "No registrado"}
               </span>
             </div>
-
           </div>
-
         </article>
 
         {/* =========================================
@@ -225,27 +189,17 @@ const PatientId = () => {
         ========================================= */}
 
         <article className="PatientId__card">
-
           <div className="PatientId__card-header">
-
             <div>
-              <span className="PatientId__card-eyebrow">
-                Contacto
-              </span>
+              <span className="PatientId__card-eyebrow">Contacto</span>
 
-              <h2 className="PatientId__card-title">
-                Información de contacto
-              </h2>
+              <h2 className="PatientId__card-title">Información de contacto</h2>
             </div>
-
           </div>
 
           <div className="PatientId__data-grid">
-
             <div className="PatientId__field">
-              <span className="PatientId__field-label">
-                Teléfono
-              </span>
+              <span className="PatientId__field-label">Teléfono</span>
 
               <span className="PatientId__field-value">
                 {phone || "No registrado"}
@@ -253,17 +207,13 @@ const PatientId = () => {
             </div>
 
             <div className="PatientId__field PatientId__field--wide">
-              <span className="PatientId__field-label">
-                Dirección
-              </span>
+              <span className="PatientId__field-label">Dirección</span>
 
               <span className="PatientId__field-value">
                 {address || "No registrada"}
               </span>
             </div>
-
           </div>
-
         </article>
 
         {/* =========================================
@@ -271,9 +221,7 @@ const PatientId = () => {
         ========================================= */}
 
         <article className="PatientId__card">
-
           <div className="PatientId__card-header">
-
             <div>
               <span className="PatientId__card-eyebrow">
                 Información clínica
@@ -283,13 +231,10 @@ const PatientId = () => {
                 Antecedentes y situación actual
               </h2>
             </div>
-
           </div>
 
           <div className="PatientId__clinical-grid">
-
             <div className="PatientId__clinical-item">
-
               <div className="PatientId__clinical-icon">
                 <svg
                   viewBox="0 0 24 24"
@@ -303,9 +248,7 @@ const PatientId = () => {
               </div>
 
               <div className="PatientId__clinical-info">
-                <span className="PatientId__field-label">
-                  Adicciones
-                </span>
+                <span className="PatientId__field-label">Adicciones</span>
 
                 <span
                   className={`PatientId__clinical-value ${
@@ -317,11 +260,9 @@ const PatientId = () => {
                   {addiction ? "Sí registra" : "No registra"}
                 </span>
               </div>
-
             </div>
 
             <div className="PatientId__clinical-item">
-
               <div className="PatientId__clinical-icon">
                 <svg
                   viewBox="0 0 24 24"
@@ -337,19 +278,14 @@ const PatientId = () => {
               </div>
 
               <div className="PatientId__clinical-info">
-                <span className="PatientId__field-label">
-                  Ocupación
-                </span>
+                <span className="PatientId__field-label">Ocupación</span>
 
                 <span className="PatientId__field-value">
                   {labor_queaser || "No registrada"}
                 </span>
               </div>
-
             </div>
-
           </div>
-
         </article>
 
         {/* =========================================
@@ -357,23 +293,15 @@ const PatientId = () => {
         ========================================= */}
 
         <article className="PatientId__card">
-
           <div className="PatientId__card-header">
-
             <div>
-              <span className="PatientId__card-eyebrow">
-                Atención
-              </span>
+              <span className="PatientId__card-eyebrow">Atención</span>
 
-              <h2 className="PatientId__card-title">
-                Consultorio asignado
-              </h2>
+              <h2 className="PatientId__card-title">Consultorio asignado</h2>
             </div>
-
           </div>
 
           <div className="PatientId__office">
-
             <div className="PatientId__office-icon">
               <svg
                 viewBox="0 0 24 24"
@@ -392,7 +320,6 @@ const PatientId = () => {
             </div>
 
             <div className="PatientId__office-info">
-
               <span className="PatientId__office-name">
                 {office?.nameOffice || "No disponible"}
               </span>
@@ -400,11 +327,8 @@ const PatientId = () => {
               <span className="PatientId__office-city">
                 {office?.city || "Ciudad no registrada"}
               </span>
-
             </div>
-
           </div>
-
         </article>
 
         {/* =========================================
@@ -412,9 +336,7 @@ const PatientId = () => {
         ========================================= */}
 
         <article className="PatientId__card PatientId__card--record">
-
           <div className="PatientId__record">
-
             <div className="PatientId__record-item">
               <span className="PatientId__field-label">
                 Paciente registrado
@@ -436,11 +358,8 @@ const PatientId = () => {
                 {formatDate(updatedAt)}
               </span>
             </div>
-
           </div>
-
         </article>
-
       </section>
       <ClinicalRecord IdPatient={patientId} />
     </main>
