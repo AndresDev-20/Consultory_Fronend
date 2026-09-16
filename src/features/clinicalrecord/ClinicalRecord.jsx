@@ -298,9 +298,15 @@ const ClinicalRecord = ({ IdPatient }) => {
           </span>
         </div>
 
-        {ClinicalNotes.length > 0 ? (
+        {isCreatingNote ? (
+          <CreateClinicalNote
+            clinicalRecordId={clinicalRecord.id}
+            setIsCreatingNote={setIsCreatingNote}
+            handleClinicalNoteCreated={handleClinicalRecordCreated}
+          />
+        ) : ClinicalNotes.length > 0 ? (
           <div className="ClinicalRecord__timeline">
-            {ClinicalNotes.map((note, index) => (
+            {[...ClinicalNotes].reverse().map((note, index) => (
               <article className="ClinicalRecord__note" key={note.id}>
                 {/* Timeline */}
 
@@ -314,18 +320,12 @@ const ClinicalRecord = ({ IdPatient }) => {
                   )}
                 </div>
 
-                {/* Note */}
-                {isCreatingNote ? (
-                  <CreateClinicalNote
-                    clinicalRecordId={clinicalRecord.id}
-                    setIsCreatingNote={setIsCreatingNote}
-                    handleClinicalNoteCreated={handleClinicalRecordCreated}
-                  />) : (<ClinicalNote
+                {/* Nota clínica */}
+
+                <ClinicalNote
                   note={note}
                   formatClinicalDate={formatClinicalDate}
-                />)
-                }
-                
+                />
               </article>
             ))}
           </div>

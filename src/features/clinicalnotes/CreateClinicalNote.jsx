@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
 
 import "./styles/Clinicalnote.css";
+import useClinicalNote from "../../hooks/useClinicalNote";
 
-const CreateClinicalNote = ({ formatClinicalDate, setIsCreatingNote, clinicalRecordId }) => {
+const CreateClinicalNote = ({ formatClinicalDate, setIsCreatingNote, clinicalRecordId, handleClinicalNoteCreated }) => {
+  const { createNote } = useClinicalNote();
   const {
     register,
     handleSubmit,
@@ -20,8 +22,17 @@ const CreateClinicalNote = ({ formatClinicalDate, setIsCreatingNote, clinicalRec
     },
   });
 
-  const createClinicalNote = (data) => {
+  const createClinicalNote = async (data) => {
     console.log("Datos de la nota clínica:", data);
+    try {
+      await createNote(data);
+      alert("Nota clínica creada exitosamente.");
+      setIsCreatingNote(false);
+      handleClinicalNoteCreated();
+    } catch (error) {
+      console.error("Error al crear la nota clínica:", error);
+      alert("Ocurrió un error al crear la nota clínica. Por favor, inténtalo de nuevo.");
+    }
   };
 
   return (

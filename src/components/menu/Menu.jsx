@@ -13,7 +13,7 @@ function Menu() {
 
   useEffect(() => {
       getOnePatient();
-  }, []);
+  }, [patientId]);
 
   const patientName = PatientOne
     ? `${PatientOne.firstNames ?? ""} ${PatientOne.lastNames ?? ""}`.trim()
@@ -124,39 +124,6 @@ function Menu() {
                   }
                 >
                   <span>Resumen</span>
-                </NavLink>
-
-                <NavLink
-                  to={`/consultorio/${id}/patients/${patientId}/clinical-records`}
-                  className={({ isActive }) =>
-                    isActive
-                      ? "Menu__patient-item Menu__patient-item--active"
-                      : "Menu__patient-item"
-                  }
-                >
-                  <span>Historia clínica</span>
-                </NavLink>
-
-                <NavLink
-                  to={`/consultorio/${id}/patients/${patientId}/clinical-notes`}
-                  className={({ isActive }) =>
-                    isActive
-                      ? "Menu__patient-item Menu__patient-item--active"
-                      : "Menu__patient-item"
-                  }
-                >
-                  <span>Notas clínicas</span>
-                </NavLink>
-
-                <NavLink
-                  to={`/consultorio/${id}/patients/${patientId}/prescriptions`}
-                  className={({ isActive }) =>
-                    isActive
-                      ? "Menu__patient-item Menu__patient-item--active"
-                      : "Menu__patient-item"
-                  }
-                >
-                  <span>Prescripciones</span>
                 </NavLink>
 
                 <NavLink
