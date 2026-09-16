@@ -1,10 +1,16 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import useClinicalRecord from "../../hooks/useClinicalRecord";
 
 import "./style/clinicalrecord.css";
+import CreateClinicalRecord from "./CreateClinicalRecord";
 
 const ClinicalRecord = ({ IdPatient }) => {
+  const [isCreating, setIsCreating] = useState(false);
   const { getAllClinicalRecords, ClinicalRecords } = useClinicalRecord();
+
+  const handleClinicalRecordCreated = async () => {
+    await getAllClinicalRecords();
+  };
 
   useEffect(() => {
     getAllClinicalRecords();
@@ -42,6 +48,11 @@ const ClinicalRecord = ({ IdPatient }) => {
    * El paciente todavía no tiene historia clínica.
    */
   if (!clinicalRecord) {
+    if(isCreating) {
+      return (
+        <CreateClinicalRecord IdPatient={IdPatient} setIsCreating={setIsCreating} handleClinicalRecordCreated={handleClinicalRecordCreated}/>
+      )
+    }
     return (
       <section className="ClinicalRecord">
         <div className="ClinicalRecord__header">
@@ -78,7 +89,8 @@ const ClinicalRecord = ({ IdPatient }) => {
             Este paciente todavía no tiene una historia clínica registrada.
           </p>
 
-          <button type="button" className="ClinicalRecord__empty-button">
+          <button type="button" className="ClinicalRecord__empty-button"
+          onClick={() => setIsCreating(true)}>
             <span>+</span>
             Crear historia clínica
           </button>

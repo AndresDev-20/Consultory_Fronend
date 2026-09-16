@@ -1,8 +1,23 @@
 import axios from "axios";
+import { useState } from "react";
+import getConfingToken from "../utils/getConfingToken";
 
 const Api = import.meta.env.VITE_REACT_APP_URL;
 
 const useAuthentication = () => {
+   const [User, setUser] = useState()
+
+    const getUser = () => {
+      axios.get(`${Api}/users`, getConfingToken())
+         .then(res => {
+            setUser(res.data)
+         })
+         .catch(err => {
+            console.log(err);
+            
+         })
+    }
+
     const logginUser = async (data) => {
     // Agregamos el "return" antes de axios
     return await axios.post(`${Api}/users/login`, data)
@@ -18,7 +33,8 @@ const useAuthentication = () => {
          });
 }
 
-    return { logginUser }
+
+    return { logginUser, User, getUser }
 }
 
 export default useAuthentication;
