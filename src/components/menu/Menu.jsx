@@ -73,8 +73,8 @@ function Menu() {
               <span className="Menu__item-label">Pacientes</span>
             </NavLink>
           )}
-        </section>
-
+          
+       
         {/* =========================================
             PACIENTE ACTUAL
         ========================================= */}
@@ -141,8 +141,7 @@ function Menu() {
             </div>
           </section>
         )}
-
-        {/* =========================================
+          {/* =========================================
             CITAS GENERALES
         ========================================= */}
 
@@ -159,6 +158,8 @@ function Menu() {
             <span className="Menu__item-label">Citas</span>
           </NavLink>
         </section>
+         </section>
+
 
         {/* =========================================
             GESTIÓN

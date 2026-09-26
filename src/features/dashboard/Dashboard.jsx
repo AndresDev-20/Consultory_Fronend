@@ -1,14 +1,9 @@
 import { NavLink } from "react-router-dom";
 import "./dashboard.css";
+import usePatient from "../../hooks/usePatient";
 
 function Dashboard() {
-  // =====================================================
-  // DATOS DEL DASHBOARD
-  // =====================================================
-  // Estos datos son solamente de prueba.
-  // Posteriormente serán reemplazados por los datos
-  // provenientes del backend.
-  // =====================================================
+  const { getAllPatients, patients } = usePatient();
 
   const metrics = [
     {
