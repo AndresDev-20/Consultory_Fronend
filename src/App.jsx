@@ -8,20 +8,23 @@ import MainLayout from './components/MainLayout'
 import Headquarter from './features/headquarters/Headquarter'
 import PatientId from './features/patients/PatientId'
 import Appointment from './pages/appointment/Appointment'
+import Settings from './features/settings/Settings'
 
 function App() {
 
   return (
     <>
      <Routes>
-      <Route path='/login' element={<Login/>} />
+      <Route path='/login' element={<Login/>} /> 
 
       <Route element={<ProtectedRoutes/>}>
       <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} /> 
           <Route path="/consultorios" element={<Headquarter />} />
+          <Route path="/consultorio/:id/settings" element={<Settings />} />
           <Route path="/consultorio/:id/patients" element={<Patient />} />
           <Route path="/consultorio/:id/patients/:patientId" element={<PatientId />} />
+          <Route path="/consultorio/:id/patients/:patientId/settings" element={<Settings />} />
           <Route path="/appointments" element={<Appointment />} />
         </Route>
       </Route>

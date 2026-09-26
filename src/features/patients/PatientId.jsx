@@ -12,6 +12,10 @@ const PatientId = () => {
 
   const { getOnePatient, PatientOne } = usePatient(patientId);
 
+   const handleSettingsPatient = (id) => {
+    navigate(`/consultorio/${id}/patients/${patientId}/settings`);
+  }
+
   useEffect(() => {
     getOnePatient();
   }, []);
@@ -100,7 +104,7 @@ const PatientId = () => {
           </div>
         </div>
 
-        <div className="PatientId__header-status">
+        <div className="PatientId__header-actions">
           <span
             className={`PatientId__status ${
               state
@@ -110,6 +114,35 @@ const PatientId = () => {
           >
             {state ? "Activo" : "Inactivo"}
           </span>
+
+          <button
+            type="button"
+            className="PatientId__settings"
+            title="Configuración del paciente"
+            onClick={() => handleSettingsPatient(id)}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 15.5C13.933 15.5 15.5 13.933 15.5 12C15.5 10.067 13.933 8.5 12 8.5C10.067 8.5 8.5 10.067 8.5 12C8.5 13.933 10.067 15.5 12 15.5Z"
+                stroke="currentColor"
+                strokeWidth="1.8"
+              />
+
+              <path
+                d="M19.4 15C19.6 14.5 19.7 14 19.7 13.5L21.1 12.4L19.7 9.6L18 9.9C17.6 9.5 17.2 9.2 16.7 9L16.4 7.2H13.2L12.9 9C12.4 9.2 12 9.5 11.6 9.9L9.9 9.6L8.5 12.4L9.9 13.5C9.9 14 10 14.5 10.2 15L9.1 16.4L11.4 18.2L12.7 17.2C13.1 17.3 13.5 17.4 14 17.4L14.8 19H18L18.8 17.4C19.3 17.4 19.7 17.3 20.1 17.2L21.4 18.2"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+
+            <span>Configuración</span>
+          </button>
         </div>
       </header>
 

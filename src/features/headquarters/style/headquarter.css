@@ -109,19 +109,36 @@
 /* ======================= */
 
 .Headquarter__card button {
+    width: 100%;
     margin-top: 10px;
     border: none;
     padding: 8px;
     border-radius: 6px;
-    background: var(--primary-green);
     color: white;
     cursor: pointer;
     transition: 0.2s;
 }
 
+.Headquarter__cardBtn {
+    background: var(--primary-green);
+}
+
+.settings-btn {
+    background: rgb(6, 85, 255);
+}
+
 
 .Headquarter__card button:hover {
-    background: var(--primary-green-hover);
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+
+.Headquarter__nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
 }
 
 /* ======================= */
