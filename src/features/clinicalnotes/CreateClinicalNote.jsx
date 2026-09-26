@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 
-import "./styles/Clinicalnote.css";
+import "./styles/clinicalnote.css";
 import useClinicalNote from "../../hooks/useClinicalNote";
 
 const CreateClinicalNote = ({ formatClinicalDate, setIsCreatingNote, clinicalRecordId, handleClinicalNoteCreated }) => {
