@@ -6,15 +6,15 @@
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
-    padding: 32px 38px 55px;
+    padding: 28px 34px 50px;
 
-    animation: appointmentFadeIn 0.45s ease both;
+    animation: appointmentFadeIn 0.35s ease both;
 }
 
 @keyframes appointmentFadeIn {
     from {
         opacity: 0;
-        transform: translateY(8px);
+        transform: translateY(6px);
     }
 
     to {
@@ -32,9 +32,9 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 30px;
+    gap: 28px;
 
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .Appointment__heading {
@@ -46,11 +46,11 @@
     align-items: center;
     gap: 7px;
 
-    margin-bottom: 7px;
+    margin-bottom: 6px;
 
     color: var(--primary-green);
 
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 750;
 
     text-transform: uppercase;
@@ -73,61 +73,60 @@
 .Appointment__title {
     color: var(--text-main);
 
-    font-size: 29px;
+    font-size: 27px;
     font-weight: 680;
     line-height: 1.2;
 
-    letter-spacing: -0.6px;
+    letter-spacing: -0.5px;
 }
 
 .Appointment__description {
-    max-width: 700px;
+    max-width: 650px;
 
-    margin-top: 7px;
+    margin-top: 6px;
 
     color: var(--text-muted);
 
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 13px;
+    line-height: 1.55;
 }
 
 .Appointment__new-button {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
+    justify-content: center;
+    gap: 8px;
 
-    height: 45px;
+    height: 42px;
 
-    padding: 0 18px;
+    padding: 0 17px;
 
     border: none;
-    border-radius: 9px;
+    border-radius: 8px;
 
     background: var(--primary-green);
     color: #fff;
 
     font-family: inherit;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 650;
 
     cursor: pointer;
 
-    box-shadow:
-        0 5px 14px rgba(13, 137, 108, 0.14);
+    box-shadow: 0 4px 12px rgba(13, 137, 108, 0.13);
 
     transition:
-        transform 0.2s ease,
-        background-color 0.2s ease,
-        box-shadow 0.2s ease;
+        transform 0.18s ease,
+        background-color 0.18s ease,
+        box-shadow 0.18s ease;
 }
 
 .Appointment__new-button:hover {
     background: var(--primary-green-hover);
 
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 
-    box-shadow:
-        0 9px 22px rgba(13, 137, 108, 0.20);
+    box-shadow: 0 7px 18px rgba(13, 137, 108, 0.18);
 }
 
 .Appointment__new-button:active {
@@ -139,10 +138,10 @@
     align-items: center;
     justify-content: center;
 
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 1;
 }
@@ -156,41 +155,39 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
-    gap: 14px;
+    gap: 12px;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .Appointment__stat {
     display: flex;
     align-items: center;
-    gap: 13px;
+    gap: 12px;
 
-    min-height: 78px;
+    min-height: 70px;
 
-    padding: 15px 17px;
+    padding: 13px 15px;
 
     background: var(--bg-main);
 
     border: 1px solid var(--border-color);
-    border-radius: 10px;
+    border-radius: 9px;
 
-    box-shadow:
-        0 2px 10px rgba(0, 0, 0, 0.025);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
 }
 
 .Appointment__stat:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 
-    border-color: rgba(13, 137, 108, 0.25);
+    border-color: rgba(13, 137, 108, 0.22);
 
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.045);
 }
 
 .Appointment__stat-icon {
@@ -200,36 +197,36 @@
 
     flex-shrink: 0;
 
-    width: 39px;
-    height: 39px;
+    width: 36px;
+    height: 36px;
 
-    border-radius: 9px;
+    border-radius: 8px;
 
     background: var(--light-green);
     color: var(--primary-green);
 }
 
 .Appointment__stat-icon svg {
-    width: 19px;
-    height: 19px;
+    width: 18px;
+    height: 18px;
 }
 
 .Appointment__stat div:last-child {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 1px;
 }
 
 .Appointment__stat span {
     color: var(--text-muted);
 
-    font-size: 11px;
+    font-size: 10px;
 }
 
 .Appointment__stat strong {
     color: var(--text-main);
 
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 700;
 }
 
@@ -240,9 +237,9 @@
 
 .Appointment__layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.65fr) minmax(350px, 0.8fr);
+    grid-template-columns: minmax(0, 1fr) 350px;
 
-    gap: 20px;
+    gap: 18px;
 
     align-items: start;
 }
@@ -258,18 +255,17 @@
     background: var(--bg-main);
 
     border: 1px solid var(--border-color);
-    border-radius: 13px;
+    border-radius: 12px;
 
-    box-shadow:
-        0 4px 18px rgba(0, 0, 0, 0.035);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.025);
 
-    animation: calendarEnter 0.5s ease both;
+    animation: calendarEnter 0.4s ease both;
 }
 
 @keyframes calendarEnter {
     from {
         opacity: 0;
-        transform: translateY(12px);
+        transform: translateY(8px);
     }
 
     to {
@@ -278,14 +274,19 @@
     }
 }
 
+
+/* =========================================================
+   CALENDAR HEADER
+========================================================= */
+
 .Appointment__calendar-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    min-height: 78px;
+    min-height: 68px;
 
-    padding: 17px 20px;
+    padding: 14px 17px;
 
     border-bottom: 1px solid var(--border-color);
 }
@@ -293,7 +294,7 @@
 .Appointment__calendar-title {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .Appointment__calendar-title-icon {
@@ -301,51 +302,52 @@
     align-items: center;
     justify-content: center;
 
-    width: 39px;
-    height: 39px;
+    width: 34px;
+    height: 34px;
 
-    border-radius: 9px;
+    border-radius: 8px;
 
     background: var(--light-green);
     color: var(--primary-green);
 }
 
 .Appointment__calendar-title-icon svg {
-    width: 19px;
-    height: 19px;
+    width: 17px;
+    height: 17px;
 }
 
 .Appointment__calendar-title span {
     display: block;
 
+    margin-bottom: 2px;
+
     color: var(--text-muted);
 
-    font-size: 10px;
-    font-weight: 650;
+    font-size: 9px;
+    font-weight: 700;
 
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .Appointment__calendar-title h2 {
-    margin-top: 2px;
-
     color: var(--text-main);
 
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 680;
 }
 
 .Appointment__calendar-actions {
     display: flex;
     align-items: center;
-    gap: 9px;
+
+    gap: 8px;
 }
 
 .Appointment__calendar-actions > button {
-    height: 34px;
+    height: 32px;
 
-    padding: 0 12px;
+    padding: 0 11px;
 
     border: 1px solid var(--border-color);
     border-radius: 7px;
@@ -354,15 +356,15 @@
     color: var(--text-main);
 
     font-family: inherit;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 650;
 
     cursor: pointer;
 
     transition:
-        border-color 0.2s ease,
-        color 0.2s ease,
-        background-color 0.2s ease;
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease;
 }
 
 .Appointment__calendar-actions > button:hover {
@@ -373,11 +375,16 @@
     color: var(--primary-green);
 }
 
+
+/* =========================================================
+   MONTH NAVIGATION
+========================================================= */
+
 .Appointment__month-navigation {
     display: flex;
     align-items: center;
 
-    height: 34px;
+    height: 32px;
 
     border: 1px solid var(--border-color);
     border-radius: 7px;
@@ -390,7 +397,7 @@
     align-items: center;
     justify-content: center;
 
-    width: 31px;
+    width: 29px;
     height: 100%;
 
     border: none;
@@ -398,13 +405,13 @@
     background: var(--bg-main);
     color: var(--text-muted);
 
-    font-size: 20px;
+    font-size: 18px;
 
     cursor: pointer;
 
     transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
+        background-color 0.18s ease,
+        color 0.18s ease;
 }
 
 .Appointment__month-navigation button:hover {
@@ -413,17 +420,16 @@
 }
 
 .Appointment__month-navigation strong {
-    min-width: 135px;
+    min-width: 125px;
 
-    padding: 0 7px;
+    padding: 0 6px;
 
     color: var(--text-main);
 
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 650;
 
     text-align: center;
-
     text-transform: capitalize;
 }
 
@@ -442,16 +448,17 @@
 }
 
 .Appointment__weekdays span {
-    padding: 10px 5px;
+    padding: 8px 4px;
 
     color: var(--text-muted);
 
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 700;
 
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 0.4px;
+
+    letter-spacing: 0.35px;
 }
 
 
@@ -461,15 +468,18 @@
 
 .Appointment__days {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+
+    grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .Appointment__day {
     position: relative;
 
-    min-height: 116px;
+    min-width: 0;
 
-    padding: 9px;
+    min-height: 82px;
+
+    padding: 7px;
 
     border: none;
     border-right: 1px solid var(--border-color);
@@ -486,8 +496,8 @@
     cursor: pointer;
 
     transition:
-        background-color 0.18s ease,
-        box-shadow 0.18s ease;
+        background-color 0.16s ease,
+        box-shadow 0.16s ease;
 }
 
 .Appointment__day:nth-child(7n) {
@@ -501,40 +511,21 @@
 .Appointment__day--outside {
     background: #fafafa;
 
-    color: #b9b9b9;
+    color: #bdbdbd;
 }
 
 .Appointment__day--selected {
     z-index: 2;
 
-    background: rgba(224, 247, 250, 0.55);
+    background: rgba(224, 247, 250, 0.35);
 
-    box-shadow:
-        inset 0 0 0 2px var(--primary-green);
+    box-shadow: inset 0 0 0 1.5px var(--primary-green);
 }
 
-.Appointment__day--selected::after {
-    content: "";
 
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(13, 137, 108, 0.025),
-            transparent 55%
-        );
-}
-
-.Appointment__day--today
-    .Appointment__day-number {
-    background: var(--primary-green);
-    color: #fff;
-}
+/* =========================================================
+   DAY HEADER
+========================================================= */
 
 .Appointment__day-head {
     position: relative;
@@ -550,15 +541,21 @@
     align-items: center;
     justify-content: center;
 
-    width: 27px;
-    height: 27px;
+    width: 25px;
+    height: 25px;
 
     border-radius: 50%;
 
     color: var(--text-main);
 
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 650;
+}
+
+.Appointment__day--today .Appointment__day-number {
+    background: var(--primary-green);
+
+    color: #fff;
 }
 
 .Appointment__day-count {
@@ -566,19 +563,25 @@
     align-items: center;
     justify-content: center;
 
-    min-width: 19px;
-    height: 19px;
+    min-width: 18px;
+    height: 18px;
 
     padding: 0 5px;
 
-    border-radius: 10px;
+    border-radius: 9px;
 
     background: var(--light-green);
+
     color: var(--dark-green);
 
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 750;
 }
+
+
+/* =========================================================
+   DAY EVENTS
+========================================================= */
 
 .Appointment__day-events {
     position: relative;
@@ -586,37 +589,43 @@
 
     display: flex;
     flex-direction: column;
-    gap: 4px;
 
-    margin-top: 8px;
+    gap: 3px;
+
+    margin-top: 7px;
 }
 
 .Appointment__day-event {
     display: flex;
     align-items: center;
-    gap: 5px;
 
-    overflow: hidden;
+    min-width: 0;
 
-    padding: 5px 6px;
+    gap: 4px;
+
+    height: 20px;
+
+    padding: 0 5px;
 
     border: 1px solid rgba(13, 137, 108, 0.08);
-    border-radius: 5px;
+    border-radius: 4px;
 
-    background: rgba(224, 247, 250, 0.7);
+    background: rgba(224, 247, 250, 0.65);
+
     color: var(--dark-green);
 
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 650;
 
     white-space: nowrap;
+    overflow: hidden;
 }
 
 .Appointment__day-event i {
     flex-shrink: 0;
 
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
 
     border-radius: 50%;
 
@@ -624,6 +633,14 @@
 }
 
 .Appointment__day-event b {
+    flex-shrink: 0;
+
+    font-weight: 700;
+}
+
+.Appointment__day-event span {
+    min-width: 0;
+
     overflow: hidden;
 
     font-weight: 600;
@@ -632,39 +649,38 @@
 }
 
 .Appointment__day-more {
-    padding: 2px 4px;
+    padding-left: 2px;
 
     color: var(--primary-green);
 
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 700;
 }
 
 
 /* =========================================================
-   PANEL
+   SIDE PANEL
 ========================================================= */
 
 .Appointment__panel {
-    min-height: 590px;
+    min-height: 550px;
 
     overflow: hidden;
 
     background: var(--bg-main);
 
     border: 1px solid var(--border-color);
-    border-radius: 13px;
+    border-radius: 12px;
 
-    box-shadow:
-        0 4px 18px rgba(0, 0, 0, 0.035);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.025);
 
-    animation: panelEnter 0.55s ease both;
+    animation: panelEnter 0.45s ease both;
 }
 
 @keyframes panelEnter {
     from {
         opacity: 0;
-        transform: translateX(10px);
+        transform: translateX(8px);
     }
 
     to {
@@ -675,7 +691,7 @@
 
 
 /* =========================================================
-   DAY VIEW
+   DAY VIEW HEADER
 ========================================================= */
 
 .Appointment__day-view-header {
@@ -683,7 +699,7 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: 21px;
+    padding: 19px;
 
     border-bottom: 1px solid var(--border-color);
 }
@@ -691,19 +707,20 @@
 .Appointment__day-view-header > div span {
     color: var(--primary-green);
 
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 750;
 
     text-transform: uppercase;
+
     letter-spacing: 0.6px;
 }
 
 .Appointment__day-view-header h2 {
-    margin-top: 5px;
+    margin-top: 4px;
 
     color: var(--text-main);
 
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 680;
 
     text-transform: capitalize;
@@ -714,27 +731,29 @@
     align-items: center;
     justify-content: center;
 
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
 
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 7px;
 
     background: var(--bg-main);
+
     color: var(--primary-green);
 
-    font-size: 20px;
+    font-size: 19px;
 
     cursor: pointer;
 
     transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease;
 }
 
 .Appointment__day-view-header button:hover {
     background: var(--light-green);
+
     border-color: var(--primary-green);
 
     transform: rotate(90deg);
@@ -748,13 +767,15 @@
 .Appointment__availability {
     display: flex;
     align-items: center;
+
     gap: 10px;
 
-    margin: 16px 20px;
+    margin: 15px 18px;
 
-    padding: 10px 12px;
+    padding: 9px 11px;
 
     border: 1px solid rgba(13, 137, 108, 0.12);
+
     border-radius: 8px;
 
     background: rgba(224, 247, 250, 0.45);
@@ -764,45 +785,32 @@
     width: 8px;
     height: 8px;
 
+    flex-shrink: 0;
+
     border-radius: 50%;
 
     background: var(--primary-green);
 
-    box-shadow:
-        0 0 0 4px rgba(13, 137, 108, 0.09);
-
-    animation: availabilityPulse 2s ease-in-out infinite;
-}
-
-@keyframes availabilityPulse {
-    0%,
-    100% {
-        box-shadow:
-            0 0 0 3px rgba(13, 137, 108, 0.07);
-    }
-
-    50% {
-        box-shadow:
-            0 0 0 6px rgba(13, 137, 108, 0.12);
-    }
+    box-shadow: 0 0 0 4px rgba(13, 137, 108, 0.08);
 }
 
 .Appointment__availability div {
     display: flex;
     flex-direction: column;
+
     gap: 1px;
 }
 
 .Appointment__availability strong {
     color: var(--dark-green);
 
-    font-size: 11px;
+    font-size: 10px;
 }
 
 .Appointment__availability span {
     color: var(--text-muted);
 
-    font-size: 10px;
+    font-size: 9px;
 }
 
 
@@ -811,14 +819,15 @@
 ========================================================= */
 
 .Appointment__schedule {
-    padding: 3px 20px 20px;
+    padding: 3px 18px 18px;
 }
 
 .Appointment__item {
     display: grid;
-    grid-template-columns: 52px 18px 1fr;
 
-    min-height: 102px;
+    grid-template-columns: 50px 18px 1fr;
+
+    min-height: 98px;
 }
 
 .Appointment__item-time {
@@ -833,7 +842,7 @@
 .Appointment__item-time strong {
     color: var(--text-main);
 
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
 }
 
@@ -842,7 +851,7 @@
 
     color: var(--text-muted);
 
-    font-size: 10px;
+    font-size: 9px;
 }
 
 .Appointment__item-marker {
@@ -869,60 +878,61 @@
     position: relative;
     z-index: 2;
 
-    width: 9px;
-    height: 9px;
+    width: 8px;
+    height: 8px;
 
     margin-top: 3px;
 
     border: 2px solid var(--bg-main);
+
     border-radius: 50%;
 
     background: var(--primary-green);
 
-    box-shadow:
-        0 0 0 2px rgba(13, 137, 108, 0.12);
+    box-shadow: 0 0 0 2px rgba(13, 137, 108, 0.1);
 }
 
 .Appointment__item-content {
-    margin: 0 0 14px 5px;
-    padding: 10px 12px;
+    margin: 0 0 13px 5px;
+
+    padding: 9px 11px;
 
     border: 1px solid var(--border-color);
+
     border-radius: 8px;
 
     background: var(--bg-main);
 
-    box-shadow:
-        0 2px 7px rgba(0, 0, 0, 0.025);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
 }
 
 .Appointment__item-content:hover {
     transform: translateX(2px);
 
-    border-color: rgba(13, 137, 108, 0.25);
+    border-color: rgba(13, 137, 108, 0.22);
 
-    box-shadow:
-        0 6px 15px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 5px 13px rgba(0, 0, 0, 0.05);
 }
 
 .Appointment__item-state {
     display: inline-flex;
 
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 
     padding: 3px 6px;
 
     border-radius: 4px;
 
     background: var(--light-green);
+
     color: var(--dark-green);
 
-    font-size: 8px;
+    font-size: 7px;
     font-weight: 750;
 
     text-transform: uppercase;
@@ -931,7 +941,7 @@
 .Appointment__item-content h3 {
     color: var(--text-main);
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 680;
 }
 
@@ -940,7 +950,7 @@
 
     color: var(--text-muted);
 
-    font-size: 10px;
+    font-size: 9px;
 }
 
 .Appointment__item-content small {
@@ -950,12 +960,12 @@
 
     color: #777;
 
-    font-size: 9px;
+    font-size: 8px;
 }
 
 
 /* =========================================================
-   EMPTY
+   EMPTY STATE
 ========================================================= */
 
 .Appointment__empty {
@@ -963,17 +973,17 @@
     flex-direction: column;
     align-items: center;
 
-    padding: 65px 25px;
+    padding: 58px 22px;
 
     text-align: center;
 
-    animation: emptyEnter 0.35s ease both;
+    animation: emptyEnter 0.3s ease both;
 }
 
 @keyframes emptyEnter {
     from {
         opacity: 0;
-        transform: translateY(8px);
+        transform: translateY(6px);
     }
 
     to {
@@ -987,51 +997,55 @@
     align-items: center;
     justify-content: center;
 
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
 
-    margin-bottom: 15px;
+    margin-bottom: 13px;
 
-    border: 1px solid rgba(13, 137, 108, 0.10);
-    border-radius: 13px;
+    border: 1px solid rgba(13, 137, 108, 0.1);
+
+    border-radius: 12px;
 
     background: var(--light-green);
+
     color: var(--primary-green);
 }
 
 .Appointment__empty-icon svg {
-    width: 23px;
-    height: 23px;
+    width: 21px;
+    height: 21px;
 }
 
 .Appointment__empty strong {
     color: var(--text-main);
 
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 680;
 }
 
 .Appointment__empty p {
-    max-width: 230px;
+    max-width: 220px;
 
-    margin-top: 6px;
+    margin-top: 5px;
 
     color: var(--text-muted);
 
-    font-size: 11px;
-    line-height: 1.55;
+    font-size: 10px;
+    line-height: 1.5;
 }
 
 .Appointment__empty button {
-    margin-top: 17px;
+    margin-top: 15px;
 
     border: none;
 
     background: transparent;
+
     color: var(--primary-green);
 
     font-family: inherit;
-    font-size: 11px;
+
+    font-size: 10px;
     font-weight: 700;
 
     cursor: pointer;
@@ -1052,13 +1066,13 @@
 
     height: 100%;
 
-    animation: formEnter 0.35s ease both;
+    animation: formEnter 0.3s ease both;
 }
 
 @keyframes formEnter {
     from {
         opacity: 0;
-        transform: translateX(10px);
+        transform: translateX(8px);
     }
 
     to {
@@ -1072,7 +1086,7 @@
     justify-content: space-between;
     align-items: flex-start;
 
-    padding: 21px;
+    padding: 19px;
 
     border-bottom: 1px solid var(--border-color);
 }
@@ -1080,10 +1094,11 @@
 .Appointment__form-header span {
     color: var(--primary-green);
 
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 750;
 
     text-transform: uppercase;
+
     letter-spacing: 0.6px;
 }
 
@@ -1092,18 +1107,18 @@
 
     color: var(--text-main);
 
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 680;
 }
 
 .Appointment__form-header p {
-    max-width: 260px;
+    max-width: 250px;
 
     margin-top: 5px;
 
     color: var(--text-muted);
 
-    font-size: 10px;
+    font-size: 9px;
     line-height: 1.5;
 }
 
@@ -1114,28 +1129,32 @@
 
     flex-shrink: 0;
 
-    width: 31px;
-    height: 31px;
+    width: 30px;
+    height: 30px;
 
     border: 1px solid var(--border-color);
+
     border-radius: 7px;
 
     background: var(--bg-main);
+
     color: var(--text-muted);
 
     font-family: inherit;
-    font-size: 21px;
+
+    font-size: 20px;
 
     cursor: pointer;
 
     transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+        background-color 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
 }
 
 .Appointment__close:hover {
     background: #fafafa;
+
     color: var(--text-main);
 
     transform: rotate(90deg);
@@ -1144,23 +1163,23 @@
 .Appointment__form-body {
     flex: 1;
 
-    padding: 20px;
+    padding: 18px;
 
     overflow-y: auto;
 }
 
 .Appointment__field {
-    margin-bottom: 15px;
+    margin-bottom: 13px;
 }
 
 .Appointment__field label {
     display: block;
 
-    margin-bottom: 6px;
+    margin-bottom: 5px;
 
     color: var(--text-main);
 
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 650;
 }
 
@@ -1170,33 +1189,35 @@
     width: 100%;
 
     border: 1px solid var(--border-color);
+
     border-radius: 7px;
 
     background: var(--bg-main);
+
     color: var(--text-main);
 
     font-family: inherit;
-    font-size: 12px;
+
+    font-size: 11px;
 
     outline: none;
 
     transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        transform 0.2s ease;
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
 }
 
 .Appointment__field input,
 .Appointment__field select {
-    height: 40px;
+    height: 38px;
 
     padding: 0 10px;
 }
 
 .Appointment__field textarea {
-    min-height: 78px;
+    min-height: 74px;
 
-    padding: 9px 10px;
+    padding: 8px 10px;
 
     line-height: 1.5;
 
@@ -1214,35 +1235,39 @@
 .Appointment__field textarea:focus {
     border-color: var(--primary-green);
 
-    box-shadow:
-        0 0 0 3px rgba(13, 137, 108, 0.09);
-
-    transform: translateY(-1px);
+    box-shadow: 0 0 0 3px rgba(13, 137, 108, 0.08);
 }
 
 .Appointment__form-grid {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
 
-    gap: 10px;
+    gap: 9px;
 }
 
 .Appointment__error {
     display: block;
 
-    margin-top: 5px;
+    margin-top: 4px;
 
     color: var(--error);
 
-    font-size: 10px;
+    font-size: 9px;
 }
+
+
+/* =========================================================
+   FORM FOOTER
+========================================================= */
 
 .Appointment__form-footer {
     display: flex;
     justify-content: flex-end;
-    gap: 8px;
 
-    padding: 15px 20px;
+    gap: 7px;
+
+    padding: 14px 18px;
 
     border-top: 1px solid var(--border-color);
 
@@ -1251,29 +1276,31 @@
 
 .Appointment__cancel,
 .Appointment__save {
-    height: 39px;
+    height: 37px;
 
-    padding: 0 14px;
+    padding: 0 13px;
 
     border-radius: 7px;
 
     font-family: inherit;
-    font-size: 11px;
+
+    font-size: 10px;
     font-weight: 650;
 
     cursor: pointer;
 
     transition:
-        transform 0.2s ease,
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease;
 }
 
 .Appointment__cancel {
     border: 1px solid var(--border-color);
 
     background: var(--bg-main);
+
     color: var(--text-muted);
 }
 
@@ -1286,15 +1313,16 @@
 .Appointment__save {
     display: flex;
     align-items: center;
+
     gap: 6px;
 
     border: none;
 
     background: var(--primary-green);
+
     color: #fff;
 
-    box-shadow:
-        0 4px 10px rgba(13, 137, 108, 0.15);
+    box-shadow: 0 4px 10px rgba(13, 137, 108, 0.13);
 }
 
 .Appointment__save:hover {
@@ -1302,12 +1330,11 @@
 
     transform: translateY(-1px);
 
-    box-shadow:
-        0 7px 15px rgba(13, 137, 108, 0.20);
+    box-shadow: 0 6px 14px rgba(13, 137, 108, 0.18);
 }
 
 .Appointment__save span {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 
@@ -1325,6 +1352,7 @@
 
 .Appointment__form-body::-webkit-scrollbar-thumb {
     background: #d0d0d0;
+
     border-radius: 10px;
 }
 
@@ -1334,18 +1362,21 @@
 ========================================================= */
 
 @media (max-width: 1200px) {
-
     .Appointment__layout {
-        grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.8fr);
+        grid-template-columns: minmax(0, 1fr) 320px;
     }
 
     .Appointment__stats {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .Appointment__day {
+        min-height: 78px;
+    }
 }
 
-@media (max-width: 1000px) {
 
+@media (max-width: 1000px) {
     .Appointment__layout {
         grid-template-columns: 1fr;
     }
@@ -1355,46 +1386,59 @@
     }
 }
 
-@media (max-width: 768px) {
 
+@media (max-width: 768px) {
     .Appointment {
-        padding: 25px 20px 40px;
+        padding: 22px 16px 35px;
     }
 
     .Appointment__header {
         flex-direction: column;
+
         align-items: flex-start;
     }
 
     .Appointment__new-button {
         width: 100%;
+
         justify-content: center;
     }
 
     .Appointment__calendar-top {
-        align-items: flex-start;
-        gap: 15px;
         flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
     }
 
     .Appointment__calendar-actions {
         width: 100%;
+
         justify-content: space-between;
     }
 
     .Appointment__day {
-        min-height: 85px;
+        min-height: 68px;
+
+        padding: 5px;
     }
 
-    .Appointment__day-event b {
+    .Appointment__day-event {
+        height: 18px;
+
+        font-size: 7px;
+    }
+
+    .Appointment__day-event span {
         display: none;
     }
 }
 
-@media (max-width: 520px) {
 
+@media (max-width: 520px) {
     .Appointment {
-        padding: 20px 14px 30px;
+        padding: 18px 10px 30px;
     }
 
     .Appointment__stats {
@@ -1405,32 +1449,53 @@
         font-size: 14px;
     }
 
+    .Appointment__weekdays span {
+        padding: 7px 2px;
+
+        font-size: 7px;
+    }
+
+    .Appointment__day {
+        min-height: 58px;
+
+        padding: 4px;
+    }
+
+    .Appointment__day-number {
+        width: 22px;
+        height: 22px;
+
+        font-size: 10px;
+    }
+
+    .Appointment__day-events {
+        margin-top: 4px;
+    }
+
+    .Appointment__day-event {
+        height: 15px;
+
+        padding: 0 3px;
+
+        font-size: 6px;
+    }
+
+    .Appointment__day-event i {
+        width: 3px;
+        height: 3px;
+    }
+
+    .Appointment__day-more {
+        font-size: 7px;
+    }
+
     .Appointment__month-navigation strong {
         min-width: 100px;
     }
 
-    .Appointment__weekdays span {
-        font-size: 8px;
-    }
-
-    .Appointment__day {
-        min-height: 65px;
-        padding: 6px;
-    }
-
-    .Appointment__day-number {
-        width: 23px;
-        height: 23px;
-
-        font-size: 11px;
-    }
-
-    .Appointment__day-events {
-        display: none;
-    }
-
     .Appointment__form-grid {
         grid-template-columns: 1fr;
+
         gap: 0;
     }
 
