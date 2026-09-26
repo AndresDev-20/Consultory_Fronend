@@ -147,6 +147,69 @@
 }
 
 /* ============================= */
+/* CREDENCIALES DE DEMOSTRACIÓN */
+/* ============================= */
+
+.Login__demo {
+  margin-top: 22px;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: rgba(13, 137, 108, 0.05);
+  text-align: center;
+}
+
+.Login__demo-title {
+  display: block;
+  color: var(--dark-green);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.Login__demo p {
+  margin: 0 0 12px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.Login__demo-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 13px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.Login__demo-credentials strong {
+  color: var(--dark-green);
+}
+
+.Login__demo-button {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--primary-green);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--primary-green);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.Login__demo-button:hover {
+  background: var(--primary-green);
+  color: white;
+}
+
+.Login__demo-button:active {
+  transform: scale(0.98);
+}
+
+
+/* ============================= */
 /* 📱 RESPONSIVE MOVIL */
 /* ============================= */
 
