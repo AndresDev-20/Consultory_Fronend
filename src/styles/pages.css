@@ -1,0 +1,976 @@
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+.Hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 28px 30px;
+  border-radius: var(--radius-lg);
+  color: #fff;
+  background:
+    radial-gradient(circle at 92% -20%, rgba(255, 255, 255, 0.22), transparent 45%),
+    linear-gradient(120deg, var(--dark-green), var(--primary-green));
+  overflow: hidden;
+  animation: rise 0.3s ease both;
+}
+
+.Hero h1 {
+  margin: 4px 0 6px;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+}
+
+.Hero p { color: rgba(255, 255, 255, 0.86); }
+
+.Hero__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.DashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.DashboardGrid__wide { grid-column: 1 / -1; }
+
+.Chart {
+  height: 210px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: end;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.Chart__col {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.Chart__bar {
+  width: 100%;
+  max-width: 46px;
+  border-radius: 8px 8px 3px 3px;
+  background: linear-gradient(180deg, #3cb995, var(--primary-green));
+  transition: height 0.5s ease;
+}
+
+.Chart__col:last-child .Chart__bar { background: linear-gradient(180deg, var(--primary-green), var(--dark-green)); }
+
+.Chart__value {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.Chart__label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: capitalize;
+}
+
+.Timeline--compact {
+  display: flex;
+  flex-direction: column;
+}
+
+.TimelineItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.TimelineItem:last-child { border-bottom: none; }
+
+.TimelineItem__time {
+  width: 74px;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dark-green);
+  flex-shrink: 0;
+}
+
+.TimelineItem__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.TimelineItem__body small {
+  color: var(--text-muted);
+  font-size: 12.5px;
+}
+
+/* =========================================================
+   CONSULTORIOS
+   ========================================================= */
+
+.CardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.OfficeCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  animation: rise 0.3s ease both;
+}
+
+.OfficeCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: #cfe9df;
+}
+
+.OfficeCard__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.OfficeCard__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--light-green);
+  color: var(--primary-green);
+}
+
+.OfficeCard__name { font-size: 18px; line-height: 1.3; }
+
+.OfficeCard__address {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.OfficeCard__address .Icon { margin-top: 3px; flex-shrink: 0; }
+
+.OfficeCard__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 6px 0 8px;
+}
+
+.OfficeCard__stats > div {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--bg-app);
+}
+
+.OfficeCard__stats strong { font-size: 20px; color: var(--dark-green); }
+.OfficeCard__stats span { font-size: 12px; color: var(--text-muted); }
+
+/* =========================================================
+   PERFIL DE PACIENTE
+   ========================================================= */
+
+.Profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 22px;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.Profile__info {
+  flex: 1;
+  min-width: 220px;
+}
+
+.Profile__name-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.Profile__name-row h1 { font-size: 24px; line-height: 1.25; }
+
+.Profile__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.Profile__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.Profile__actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.MiniStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.MiniStats > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 6px;
+  border-radius: 12px;
+  background: var(--bg-app);
+}
+
+.MiniStats strong { font-size: 22px; color: var(--dark-green); }
+.MiniStats span { font-size: 12px; color: var(--text-muted); }
+
+.LastNote {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--primary-green);
+  border-radius: 0 10px 10px 0;
+  background: var(--soft-green);
+}
+
+.LastNote small { color: var(--text-muted); font-size: 12px; }
+
+.NextAppointment {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.NextAppointment > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.NextAppointment small { color: var(--text-muted); font-size: 13px; }
+
+.NextAppointment__date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: var(--primary-green);
+  color: #fff;
+  line-height: 1.05;
+  flex-shrink: 0;
+}
+
+.NextAppointment__date strong { font-size: 22px; }
+.NextAppointment__date small { color: rgba(255, 255, 255, 0.85); text-transform: uppercase; font-size: 11px; }
+
+.BigNumber {
+  display: block;
+  font-size: 28px;
+  color: var(--dark-green);
+}
+
+.BigNumber--warning { color: var(--warning); }
+
+/* =========================================================
+   HISTORIA CLÍNICA
+   ========================================================= */
+
+.ClinicalHistory {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.Record {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.Record__toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  text-align: left;
+}
+
+.Record__toggle:hover { background: var(--soft-green); }
+
+.Record__icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--light-green);
+  color: var(--primary-green);
+  flex-shrink: 0;
+}
+
+.Record__title {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.Record__title small {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.Record__chevron {
+  color: var(--text-soft);
+  transition: transform 0.2s ease;
+}
+
+.Record.is-open .Record__chevron { transform: rotate(180deg); }
+
+.Record__body {
+  padding: 4px 20px 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.Record__toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 14px 0 18px;
+}
+
+.Record__empty { padding: 10px 0; }
+
+.Timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 22px;
+}
+
+.Timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--border-color);
+}
+
+.Note {
+  position: relative;
+  padding: 16px 18px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: #fcfdfd;
+}
+
+.Note__marker {
+  position: absolute;
+  left: -22px;
+  top: 20px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid var(--bg-main);
+  background: var(--primary-green);
+  box-shadow: 0 0 0 2px var(--light-green);
+}
+
+.Note__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.Note__date {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--primary-green);
+}
+
+.Note__reason { font-size: 16px; margin-top: 2px; }
+
+.Note__actions { display: flex; gap: 2px; }
+
+.Note__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 20px;
+  margin-top: 12px;
+}
+
+.Note__full { grid-column: 1 / -1; }
+
+.Note__grid dt {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-soft);
+}
+
+.Note__grid dd {
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+
+.Rx {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.Rx__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Rx__header > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.Rx__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.Rx__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--purple-soft);
+}
+
+.Rx__item > div:first-child {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.35;
+}
+
+.Rx__item span { font-size: 13px; color: var(--text-main); }
+.Rx__item small { font-size: 12.5px; color: var(--text-muted); }
+.Rx__actions { display: flex; }
+
+/* =========================================================
+   AGENDA DE CITAS
+   ========================================================= */
+
+.Agenda {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(300px, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.Calendar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.Calendar__month { font-size: 19px; }
+
+.Calendar__nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.Calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.Calendar__weekday {
+  padding: 4px 0 8px;
+  text-align: center;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-soft);
+}
+
+.Calendar__day {
+  min-height: 92px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 3px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: var(--bg-app);
+  text-align: left;
+  overflow: hidden;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.Calendar__day:hover { border-color: var(--border-strong); background: #fff; }
+.Calendar__day.is-outside { opacity: 0.45; }
+
+.Calendar__day.is-selected {
+  border-color: var(--primary-green);
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(13, 137, 108, 0.14);
+}
+
+.Calendar__number {
+  align-self: flex-start;
+  display: grid;
+  place-items: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 4px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.Calendar__day.is-today .Calendar__number {
+  background: var(--primary-green);
+  color: #fff;
+}
+
+.Calendar__events {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.Calendar__event {
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: var(--light-green);
+  color: var(--dark-green);
+}
+
+.Calendar__event--info { background: var(--info-soft); color: var(--info); }
+.Calendar__event--warning { background: var(--warning-soft); color: #c24a1c; }
+.Calendar__event--danger { background: var(--error-soft); color: var(--error); text-decoration: line-through; }
+.Calendar__event--neutral { background: #eef1f0; color: var(--text-muted); }
+
+.Calendar__more {
+  font-size: 11px;
+  color: var(--text-muted);
+  padding-left: 4px;
+}
+
+.Calendar__dots { display: none; gap: 3px; }
+
+.Calendar__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 14px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.Calendar__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.DayPanel {
+  position: sticky;
+  top: calc(var(--header-h) + 20px);
+}
+
+.DayPanel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.DayPanel__header .eyebrow { text-transform: capitalize; }
+.DayPanel__header h2 { font-size: 19px; }
+
+.DayPanel__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.DayGroups {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.DayGroup__title {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: capitalize;
+}
+
+.Appt {
+  --tone: var(--primary-green);
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--tone);
+  border-radius: var(--radius);
+  background: var(--bg-main);
+}
+
+.Appt--info { --tone: var(--info); }
+.Appt--warning { --tone: var(--warning); }
+.Appt--danger { --tone: var(--error); }
+.Appt--neutral { --tone: #9aa5a0; }
+
+.Appt__time {
+  display: flex;
+  flex-direction: column;
+  width: 66px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1.25;
+}
+
+.Appt__time strong { font-size: 14px; }
+.Appt__time small { font-size: 12px; color: var(--text-soft); }
+
+.Appt__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.Appt__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.Appt__patient {
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+a.Appt__patient:hover { color: var(--primary-green); }
+
+.Appt__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.Appt__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.Appt__notes {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.Appt__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.Appt__actions .icon-btn { width: 30px; height: 30px; }
+
+/* =========================================================
+   FACTURA
+   ========================================================= */
+
+.InvoiceLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 18px;
+  align-items: start;
+}
+
+.Invoice {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 28px;
+}
+
+.Invoice__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--primary-green);
+}
+
+.Invoice__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.Invoice__brand img { width: 54px; height: 54px; }
+
+.Invoice__brand > div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.Invoice__brand strong { font-size: 20px; color: var(--dark-green); }
+.Invoice__brand small { color: var(--text-muted); }
+
+.Invoice__number {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.Invoice__number h1 { font-size: 26px; font-variant-numeric: tabular-nums; }
+
+.Invoice__parties {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.Invoice__parties > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.Invoice__parties small { color: var(--text-muted); font-size: 13px; }
+
+.Invoice__party-name { font-weight: 700; }
+a.Invoice__party-name:hover { color: var(--primary-green); }
+
+.Invoice__totals {
+  align-self: flex-end;
+  width: min(320px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.Invoice__totals > div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.Invoice__totals span { color: var(--text-muted); }
+
+.Invoice__balance {
+  margin-top: 6px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--light-green);
+}
+
+.Invoice__balance span { color: var(--dark-green); font-weight: 600; }
+.Invoice__balance strong { font-size: 18px; color: var(--dark-green); }
+
+.PaymentList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.PaymentList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--bg-app);
+}
+
+.PaymentList li > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+  min-width: 0;
+}
+
+.PaymentList small { color: var(--text-muted); font-size: 12px; }
+
+.PaymentList__icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: var(--light-green);
+  color: var(--primary-green);
+  flex-shrink: 0;
+}
+
+.PaymentSummary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--bg-app);
+}
+
+.PaymentSummary > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.PaymentSummary span { font-size: 12px; color: var(--text-muted); }
+
+/* =========================================================
+   USUARIOS
+   ========================================================= */
+
+.RoleCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.RoleCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 16px 18px;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.RoleCard strong { font-size: 24px; line-height: 1.1; }
+.RoleCard small { font-size: 13px; color: var(--text-muted); }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1180px) {
+  .Agenda { grid-template-columns: 1fr; }
+  .DayPanel { position: static; }
+  .InvoiceLayout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .DashboardGrid { grid-template-columns: 1fr; }
+  .Invoice__parties { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .Hero { padding: 22px; }
+  .Hero h1 { font-size: 23px; }
+  .Calendar__day { min-height: 54px; padding: 4px; }
+  .Calendar__event, .Calendar__more { display: none; }
+  .Calendar__dots { display: flex; flex-wrap: wrap; padding-left: 3px; }
+  .Note__grid { grid-template-columns: 1fr; }
+  .Invoice { padding: 18px; }
+  .Invoice__header { flex-direction: column; }
+  .Invoice__number { align-items: flex-start; }
+  .Invoice__parties { grid-template-columns: 1fr; }
+  .Profile__actions { width: 100%; }
+  .Profile__actions .btn { flex: 1; }
+  .Chart__value { display: none; }
+  .Record__toggle { flex-wrap: wrap; }
+}
+
+@media print {
+  .Page { gap: 10px; }
+  .InvoiceLayout { display: block; }
+  .Invoice { border: none; box-shadow: none; padding: 0; }
+  .Table tbody tr:hover { background: none; }
+}
